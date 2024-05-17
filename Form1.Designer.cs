@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridView dataGridView2;
+            System.Windows.Forms.DataGridView dataGridView_data;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fitnesso));
             this.fitnessoDataSet = new Gym_Management_System.FitnessoDataSet();
             this.fitnessoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -76,7 +76,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3_Platnosc = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            dataGridView2 = new System.Windows.Forms.DataGridView();
+            dataGridView_data = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(dataGridView_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fitnessoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fitnessoDataSetBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -84,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_Edit_Rezerwacja)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Add_IdKlientaRezerwacji)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView2)).BeginInit();
             this.tabPage2_Zajecia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.gB_Add_dodwaniaZajec.SuspendLayout();
@@ -93,6 +93,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_Add_Zarezerwowane)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView_data
+            // 
+            dataGridView_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_data.Location = new System.Drawing.Point(12, 18);
+            dataGridView_data.Margin = new System.Windows.Forms.Padding(4);
+            dataGridView_data.Name = "dataGridView_data";
+            dataGridView_data.RowHeadersWidth = 51;
+            dataGridView_data.Size = new System.Drawing.Size(499, 507);
+            dataGridView_data.TabIndex = 18;
+            dataGridView_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // fitnessoDataSet
             // 
@@ -124,7 +135,7 @@
             this.tabPage1_Rezerwacje.Controls.Add(this.button_UsuwanieRezerwacji);
             this.tabPage1_Rezerwacje.Controls.Add(this.button_EdytowanieRezerwacji);
             this.tabPage1_Rezerwacje.Controls.Add(this.groupBox1);
-            this.tabPage1_Rezerwacje.Controls.Add(dataGridView2);
+            this.tabPage1_Rezerwacje.Controls.Add(dataGridView_data);
             this.tabPage1_Rezerwacje.Location = new System.Drawing.Point(4, 25);
             this.tabPage1_Rezerwacje.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1_Rezerwacje.Name = "tabPage1_Rezerwacje";
@@ -285,17 +296,6 @@
             this.cB_Add_WyborZajecRezerwacji.Name = "cB_Add_WyborZajecRezerwacji";
             this.cB_Add_WyborZajecRezerwacji.Size = new System.Drawing.Size(349, 24);
             this.cB_Add_WyborZajecRezerwacji.TabIndex = 5;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new System.Drawing.Point(12, 18);
-            dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new System.Drawing.Size(499, 507);
-            dataGridView2.TabIndex = 18;
-            dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // tabPage2_Zajecia
             // 
@@ -579,6 +579,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(499, 507);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage3_Platnosc
             // 
@@ -615,6 +616,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Fitnesso";
             this.Text = "Fitnesso";
+            ((System.ComponentModel.ISupportInitialize)(dataGridView_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fitnessoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fitnessoDataSetBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -624,7 +626,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Add_IdKlientaRezerwacji)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView2)).EndInit();
             this.tabPage2_Zajecia.ResumeLayout(false);
             this.tabPage2_Zajecia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

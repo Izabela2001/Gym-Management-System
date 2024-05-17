@@ -18,17 +18,21 @@ namespace Gym_Management_System
 
     {
         
-        private DataGridView dataGridView2 = new DataGridView();
+       /// <summary>
+       /// private DataGridView dataGridView2 = new DataGridView();
+       /// </summary>
 
         public Fitnesso()
         {
             InitializeComponent(); // Inicjalizujemy komponenty formularza (w tym button_WyswietlanieRezerwacji)
 
             // Konfigurujemy dataGridView2
-            dataGridView2.Dock = DockStyle.Fill;
-            Controls.Add(dataGridView2); // Dodajemy dataGridView2 do formularza
 
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+   
+           // dataGridView2.Dock = DockStyle.Fill;
+           /* Controls.Add(dataGridView2); // Dodajemy dataGridView2 do formularza
+
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;*/
 
         }
 
@@ -146,7 +150,8 @@ namespace Gym_Management_System
                 adapter.Fill(ds, "RESERVATION"); // Pobierz dane z tabeli RESERVATION
 
                 // Przypisz dane do dataGridView2
-                dataGridView2.DataSource = ds.Tables["RESERVATION"];
+                
+               // dataGridView2.DataSource = ds.Tables["RESERVATION"];
             }
             catch (Exception ex)
             {
@@ -163,6 +168,11 @@ namespace Gym_Management_System
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

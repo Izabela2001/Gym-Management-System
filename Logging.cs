@@ -44,5 +44,10 @@ namespace Gym_Management_System
         {
 
         }
+
+        private void ZdjecieLogowania_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

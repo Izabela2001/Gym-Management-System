@@ -41,7 +41,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 234);
+            this.label1.Location = new System.Drawing.Point(74, 382);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 16);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 268);
+            this.label2.Location = new System.Drawing.Point(74, 416);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 16);
             this.label2.TabIndex = 1;
@@ -58,14 +58,14 @@
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(166, 228);
+            this.Login.Location = new System.Drawing.Point(171, 376);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(225, 22);
             this.Login.TabIndex = 2;
             // 
             // Hasło
             // 
-            this.Hasło.Location = new System.Drawing.Point(166, 268);
+            this.Hasło.Location = new System.Drawing.Point(171, 416);
             this.Hasło.Name = "Hasło";
             this.Hasło.PasswordChar = '*';
             this.Hasło.Size = new System.Drawing.Size(225, 22);
@@ -73,28 +73,35 @@
             // 
             // Logowanie
             // 
-            this.Logowanie.Location = new System.Drawing.Point(200, 313);
+            this.Logowanie.BackColor = System.Drawing.Color.Black;
+            this.Logowanie.ForeColor = System.Drawing.Color.Snow;
+            this.Logowanie.Location = new System.Drawing.Point(171, 458);
             this.Logowanie.Name = "Logowanie";
-            this.Logowanie.Size = new System.Drawing.Size(75, 23);
+            this.Logowanie.Size = new System.Drawing.Size(148, 42);
             this.Logowanie.TabIndex = 4;
             this.Logowanie.Text = "Zaloguj się";
-            this.Logowanie.UseVisualStyleBackColor = true;
+            this.Logowanie.UseVisualStyleBackColor = false;
             this.Logowanie.Click += new System.EventHandler(this.Logowanie_Click);
             // 
             // ZdjecieLogowania
             // 
+            this.ZdjecieLogowania.Image = ((System.Drawing.Image)(resources.GetObject("ZdjecieLogowania.Image")));
+            this.ZdjecieLogowania.ImageLocation = "";
             this.ZdjecieLogowania.InitialImage = ((System.Drawing.Image)(resources.GetObject("ZdjecieLogowania.InitialImage")));
-            this.ZdjecieLogowania.Location = new System.Drawing.Point(51, 50);
+            this.ZdjecieLogowania.Location = new System.Drawing.Point(88, 38);
             this.ZdjecieLogowania.Name = "ZdjecieLogowania";
-            this.ZdjecieLogowania.Size = new System.Drawing.Size(350, 158);
+            this.ZdjecieLogowania.Size = new System.Drawing.Size(308, 312);
             this.ZdjecieLogowania.TabIndex = 5;
             this.ZdjecieLogowania.TabStop = false;
+            this.ZdjecieLogowania.WaitOnLoad = true;
+            this.ZdjecieLogowania.Click += new System.EventHandler(this.ZdjecieLogowania_Click);
             // 
             // Logging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 368);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(487, 549);
             this.Controls.Add(this.ZdjecieLogowania);
             this.Controls.Add(this.Logowanie);
             this.Controls.Add(this.Hasło);
