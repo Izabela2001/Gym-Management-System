@@ -73,7 +73,7 @@
             // 
             // Logowanie
             // 
-            this.Logowanie.Location = new System.Drawing.Point(166, 312);
+            this.Logowanie.Location = new System.Drawing.Point(200, 313);
             this.Logowanie.Name = "Logowanie";
             this.Logowanie.Size = new System.Drawing.Size(75, 23);
             this.Logowanie.TabIndex = 4;

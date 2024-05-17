@@ -16,7 +16,7 @@ namespace Gym_Management_System
         public Logging()
         {
             InitializeComponent();
-            //ZdjecieLogowania.Image = IMG.
+            
         }
 
        
@@ -34,6 +34,7 @@ namespace Gym_Management_System
             }
             else
             {
+
                 MessageBox.Show("Błędny login lub hasło");
             }
 
