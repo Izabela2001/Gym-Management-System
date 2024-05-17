@@ -2,24 +2,39 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using static Gym_Management_System.FitnessoDataSet;
+
 
 namespace Gym_Management_System
 {
     public partial class Fitnesso : Form
+
     {
+        
+        private DataGridView dataGridView2 = new DataGridView();
+
         public Fitnesso()
         {
-            InitializeComponent();
+            InitializeComponent(); // Inicjalizujemy komponenty formularza (w tym button_WyswietlanieRezerwacji)
+
+            // Konfigurujemy dataGridView2
+            dataGridView2.Dock = DockStyle.Fill;
+            Controls.Add(dataGridView2); // Dodajemy dataGridView2 do formularza
+
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           string z = "Heloo";
+          
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -113,6 +128,41 @@ namespace Gym_Management_System
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_WyswietlanieRezerwacji_Click(object sender, EventArgs e)
+        {
+
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM RESERVATION", con);
+                DataSet ds = new DataSet();
+
+                adapter.Fill(ds, "RESERVATION"); // Pobierz dane z tabeli RESERVATION
+
+                // Przypisz dane do dataGridView2
+                dataGridView2.DataSource = ds.Tables["RESERVATION"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
