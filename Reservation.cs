@@ -132,6 +132,9 @@ namespace Gym_Management_System
             }
         }
 
-        
+        private void DeleteReservation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -158,6 +158,12 @@
     <Compile Include="FitnessClass.Designer.cs">
       <DependentUpon>FitnessClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="FitnessClasses\AddNewFitnessClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FitnessClasses\AddNewFitnessClass.Designer.cs">
+      <DependentUpon>AddNewFitnessClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reservations\AddReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </Compile>
     <EmbeddedResource Include="FitnessClass.resx">
       <DependentUpon>FitnessClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FitnessClasses\AddNewFitnessClass.resx">
+      <DependentUpon>AddNewFitnessClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservations\AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
@@ -266,7 +275,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FitnessClass\" />
     <Folder Include="IMG\" />
     <Folder Include="Payment\" />
   </ItemGroup>

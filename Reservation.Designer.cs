@@ -36,6 +36,7 @@
             this.ReservationShow = new System.Windows.Forms.DataGridView();
             this.ToDayReservation = new System.Windows.Forms.Button();
             this.AllReservation = new System.Windows.Forms.Button();
+            this.DeleteReservation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +120,23 @@
             this.AllReservation.UseVisualStyleBackColor = true;
             this.AllReservation.Click += new System.EventHandler(this.AllReservation_Click);
             // 
+            // DeleteReservation
+            // 
+            this.DeleteReservation.Location = new System.Drawing.Point(24, 399);
+            this.DeleteReservation.Name = "DeleteReservation";
+            this.DeleteReservation.Size = new System.Drawing.Size(269, 36);
+            this.DeleteReservation.TabIndex = 8;
+            this.DeleteReservation.TabStop = false;
+            this.DeleteReservation.Text = "Usuń reserwacje";
+            this.DeleteReservation.UseVisualStyleBackColor = true;
+            this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 447);
+            this.Controls.Add(this.DeleteReservation);
             this.Controls.Add(this.AllReservation);
             this.Controls.Add(this.ToDayReservation);
             this.Controls.Add(this.ReservationShow);
@@ -149,5 +162,6 @@
         private System.Windows.Forms.DataGridView ReservationShow;
         private System.Windows.Forms.Button ToDayReservation;
         private System.Windows.Forms.Button AllReservation;
+        private System.Windows.Forms.Button DeleteReservation;
     }
 }
