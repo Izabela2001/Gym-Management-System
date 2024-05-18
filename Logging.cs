@@ -22,32 +22,23 @@ namespace Gym_Management_System
        
         private void Logowanie_Click(object sender, EventArgs e)
         {
-            Fitnesso form1 = new Fitnesso();
+            App App = new App();
 
             string login = Login.Text;
             string haslo = Hasło.Text;
 
             if (login == "Admin" && haslo == "Admin")
             {
-                form1.Show();
+                App.Show();
                 this.Hide();
             }
             else
             {
-
                 MessageBox.Show("Błędny login lub hasło");
             }
 
         }
 
-        private void Logging_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ZdjecieLogowania_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -94,7 +94,7 @@
             this.ZdjecieLogowania.TabIndex = 5;
             this.ZdjecieLogowania.TabStop = false;
             this.ZdjecieLogowania.WaitOnLoad = true;
-            this.ZdjecieLogowania.Click += new System.EventHandler(this.ZdjecieLogowania_Click);
+            
             // 
             // Logging
             // 
@@ -110,7 +110,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Logging";
             this.Text = "Logging";
-            this.Load += new System.EventHandler(this.Logging_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.ZdjecieLogowania)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
