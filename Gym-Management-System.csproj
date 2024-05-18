@@ -152,10 +152,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddReservation.cs">
+    <Compile Include="Reservations\AddReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddReservation.Designer.cs">
+    <Compile Include="Reservations\AddReservation.Designer.cs">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="App.cs">
@@ -163,6 +163,12 @@
     </Compile>
     <Compile Include="App.Designer.cs">
       <DependentUpon>App.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\ApproveReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\ApproveReservation.Designer.cs">
+      <DependentUpon>ApproveReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="FitnessoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -189,11 +195,20 @@
     <Compile Include="Reservation.Designer.cs">
       <DependentUpon>Reservation.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddReservation.resx">
+    <Compile Include="Reservations\UpdateReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\UpdateReservation.Designer.cs">
+      <DependentUpon>UpdateReservation.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reservations\AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App.resx">
       <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\ApproveReservation.resx">
+      <DependentUpon>ApproveReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -212,6 +227,9 @@
     </Compile>
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\UpdateReservation.resx">
+      <DependentUpon>UpdateReservation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="FitnessoDataSet.xsc">
       <DependentUpon>FitnessoDataSet.xsd</DependentUpon>

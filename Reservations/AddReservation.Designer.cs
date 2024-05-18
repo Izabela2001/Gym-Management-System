@@ -37,6 +37,11 @@
             this.OpptionPaid = new System.Windows.Forms.GroupBox();
             this.TruePaid = new System.Windows.Forms.RadioButton();
             this.FalsePaid = new System.Windows.Forms.RadioButton();
+            this.Result_add = new System.Windows.Forms.Label();
+            this.List_TypePayment = new System.Windows.Forms.CheckedListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Return_Reservation = new System.Windows.Forms.Button();
+            this.OpptionPaid.SuspendLayout();
             this.SuspendLayout();
             // 
             // label
@@ -66,7 +71,7 @@
             // 
             // Dodaj_Reserwacje
             // 
-            this.Dodaj_Reserwacje.Location = new System.Drawing.Point(182, 538);
+            this.Dodaj_Reserwacje.Location = new System.Drawing.Point(187, 502);
             this.Dodaj_Reserwacje.Name = "Dodaj_Reserwacje";
             this.Dodaj_Reserwacje.Size = new System.Drawing.Size(75, 23);
             this.Dodaj_Reserwacje.TabIndex = 4;
@@ -81,7 +86,6 @@
             this.List_FitnessClass.Name = "List_FitnessClass";
             this.List_FitnessClass.Size = new System.Drawing.Size(174, 38);
             this.List_FitnessClass.TabIndex = 7;
-            
             // 
             // label2
             // 
@@ -94,9 +98,11 @@
             // 
             // OpptionPaid
             // 
+            this.OpptionPaid.Controls.Add(this.label3);
+            this.OpptionPaid.Controls.Add(this.List_TypePayment);
             this.OpptionPaid.Location = new System.Drawing.Point(43, 252);
             this.OpptionPaid.Name = "OpptionPaid";
-            this.OpptionPaid.Size = new System.Drawing.Size(395, 227);
+            this.OpptionPaid.Size = new System.Drawing.Size(392, 109);
             this.OpptionPaid.TabIndex = 11;
             this.OpptionPaid.TabStop = false;
             this.OpptionPaid.Text = "Właściowści";
@@ -126,11 +132,49 @@
             this.FalsePaid.UseVisualStyleBackColor = true;
             this.FalsePaid.CheckedChanged += new System.EventHandler(this.FalsePaid_CheckedChanged);
             // 
+            // Result_add
+            // 
+            this.Result_add.AutoSize = true;
+            this.Result_add.Location = new System.Drawing.Point(40, 388);
+            this.Result_add.Name = "Result_add";
+            this.Result_add.Size = new System.Drawing.Size(44, 16);
+            this.Result_add.TabIndex = 15;
+            this.Result_add.Text = "label3";
+            // 
+            // List_TypePayment
+            // 
+            this.List_TypePayment.FormattingEnabled = true;
+            this.List_TypePayment.Location = new System.Drawing.Point(166, 34);
+            this.List_TypePayment.Name = "List_TypePayment";
+            this.List_TypePayment.Size = new System.Drawing.Size(211, 38);
+            this.List_TypePayment.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Rodzaj płatności";
+            // 
+            // Return_Reservation
+            // 
+            this.Return_Reservation.Location = new System.Drawing.Point(35, 18);
+            this.Return_Reservation.Name = "Return_Reservation";
+            this.Return_Reservation.Size = new System.Drawing.Size(102, 27);
+            this.Return_Reservation.TabIndex = 16;
+            this.Return_Reservation.Text = "Wróć";
+            this.Return_Reservation.UseVisualStyleBackColor = true;
+            this.Return_Reservation.Click += new System.EventHandler(this.Return_Reservation_Click);
+            // 
             // AddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 596);
+            this.Controls.Add(this.Return_Reservation);
+            this.Controls.Add(this.Result_add);
             this.Controls.Add(this.FalsePaid);
             this.Controls.Add(this.TruePaid);
             this.Controls.Add(this.OpptionPaid);
@@ -142,6 +186,8 @@
             this.Controls.Add(this.label);
             this.Name = "AddReservation";
             this.Text = "AddReservation";
+            this.OpptionPaid.ResumeLayout(false);
+            this.OpptionPaid.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +204,9 @@
         private System.Windows.Forms.GroupBox OpptionPaid;
         private System.Windows.Forms.RadioButton TruePaid;
         private System.Windows.Forms.RadioButton FalsePaid;
+        private System.Windows.Forms.Label Result_add;
+        private System.Windows.Forms.CheckedListBox List_TypePayment;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Return_Reservation;
     }
 }

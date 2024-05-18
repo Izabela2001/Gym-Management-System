@@ -19,6 +19,7 @@ namespace Gym_Management_System
             InitializeComponent();
             Display_Options.Visible = false;
             ManagmentOptions.Visible = false;
+            
         }
 
         private void Display_reservation_Click(object sender, EventArgs e)
@@ -150,6 +151,7 @@ namespace Gym_Management_System
 
         private void Display_OptionButton_CheckedChanged(object sender, EventArgs e)
         {
+            
             Display_Options.Visible = true;
             ManagmentOptions.Visible = false;
         }
@@ -168,5 +170,7 @@ namespace Gym_Management_System
             logging.Show();
             this.Hide();
         }
+
+        
     }
 }

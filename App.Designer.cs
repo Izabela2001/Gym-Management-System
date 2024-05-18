@@ -142,7 +142,7 @@
             // ManagmentOptions
             // 
             this.ManagmentOptions.Controls.Add(this.Add_Rese);
-            this.ManagmentOptions.Location = new System.Drawing.Point(434, 349);
+            this.ManagmentOptions.Location = new System.Drawing.Point(533, 349);
             this.ManagmentOptions.Name = "ManagmentOptions";
             this.ManagmentOptions.Size = new System.Drawing.Size(465, 192);
             this.ManagmentOptions.TabIndex = 9;
