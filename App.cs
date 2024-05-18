@@ -19,7 +19,9 @@ namespace Gym_Management_System
             InitializeComponent();
             Display_Options.Visible = false;
             ManagmentOptions.Visible = false;
-            
+            Display.Visible = false;
+
+
         }
 
         private void Display_reservation_Click(object sender, EventArgs e)
@@ -27,6 +29,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
+
                 Display.DataSource = null;
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
@@ -35,6 +38,7 @@ namespace Gym_Management_System
 
                 adapter.Fill(ds, "RESERVATION"); 
                 Display.DataSource = ds.Tables["RESERVATION"];
+               
 
 
             }
@@ -66,6 +70,7 @@ namespace Gym_Management_System
 
                 adapter.Fill(ds, "PAYMENT");
                 Display.DataSource = ds.Tables["PAYMENT"];
+                
 
 
             }
@@ -96,6 +101,7 @@ namespace Gym_Management_System
 
                 adapter.Fill(ds, "FITNESS_CLASS");
                 Display.DataSource = ds.Tables["FITNESS_CLASS"];
+                
 
 
             }
@@ -125,6 +131,7 @@ namespace Gym_Management_System
 
                 adapter.Fill(ds, "TYPE_FITNESS_CLASS");
                 Display.DataSource = ds.Tables["TYPE_FITNESS_CLASS"];
+               
 
 
             }
@@ -154,12 +161,14 @@ namespace Gym_Management_System
             
             Display_Options.Visible = true;
             ManagmentOptions.Visible = false;
+            Display.Visible = true;
         }
 
         private void management_CheckedChanged(object sender, EventArgs e)
         {
             ManagmentOptions.Visible = true;
             Display_Options.Visible = false;
+            Display.Visible = false;
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -171,6 +180,11 @@ namespace Gym_Management_System
             this.Hide();
         }
 
-        
+        private void ManagingReservation_Click(object sender, EventArgs e)
+        {
+            FitnessClass fitnessClass = new FitnessClass(); 
+            fitnessClass.Show();
+            this.Hide();
+        }
     }
 }

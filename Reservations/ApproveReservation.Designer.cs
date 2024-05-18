@@ -32,6 +32,7 @@
             this.Approved = new System.Windows.Forms.Button();
             this.Result_Approved = new System.Windows.Forms.Label();
             this.Return_reservation = new System.Windows.Forms.Button();
+            this.Main = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Reservation_NoApproved)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // Result_Approved
             // 
             this.Result_Approved.AutoSize = true;
-            this.Result_Approved.Location = new System.Drawing.Point(22, 376);
+            this.Result_Approved.Location = new System.Drawing.Point(33, 383);
             this.Result_Approved.Name = "Result_Approved";
             this.Result_Approved.Size = new System.Drawing.Size(44, 16);
             this.Result_Approved.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // Return_reservation
             // 
-            this.Return_reservation.Location = new System.Drawing.Point(298, 312);
+            this.Return_reservation.Location = new System.Drawing.Point(275, 312);
             this.Return_reservation.Name = "Return_reservation";
             this.Return_reservation.Size = new System.Drawing.Size(259, 45);
             this.Return_reservation.TabIndex = 3;
@@ -74,11 +75,22 @@
             this.Return_reservation.UseVisualStyleBackColor = true;
             this.Return_reservation.Click += new System.EventHandler(this.Return_reservation_Click);
             // 
+            // Main
+            // 
+            this.Main.Location = new System.Drawing.Point(540, 307);
+            this.Main.Name = "Main";
+            this.Main.Size = new System.Drawing.Size(211, 55);
+            this.Main.TabIndex = 4;
+            this.Main.Text = "Strona główna";
+            this.Main.UseVisualStyleBackColor = true;
+            this.Main.Click += new System.EventHandler(this.Main_Click);
+            // 
             // ApproveReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Main);
             this.Controls.Add(this.Return_reservation);
             this.Controls.Add(this.Result_Approved);
             this.Controls.Add(this.Approved);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Button Approved;
         private System.Windows.Forms.Label Result_Approved;
         private System.Windows.Forms.Button Return_reservation;
+        private System.Windows.Forms.Button Main;
     }
 }

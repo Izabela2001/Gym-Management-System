@@ -38,6 +38,8 @@
             this.Display_Options = new System.Windows.Forms.Panel();
             this.management = new System.Windows.Forms.RadioButton();
             this.ManagmentOptions = new System.Windows.Forms.Panel();
+            this.ManagingPayment = new System.Windows.Forms.Button();
+            this.ManagingReservation = new System.Windows.Forms.Button();
             this.Logout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Display)).BeginInit();
             this.Display_Options.SuspendLayout();
@@ -47,7 +49,7 @@
             // Display
             // 
             this.Display.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Display.Location = new System.Drawing.Point(25, 55);
+            this.Display.Location = new System.Drawing.Point(112, 53);
             this.Display.Name = "Display";
             this.Display.RowHeadersWidth = 51;
             this.Display.RowTemplate.Height = 24;
@@ -76,9 +78,9 @@
             // 
             // Display_fitnessClass
             // 
-            this.Display_fitnessClass.Location = new System.Drawing.Point(47, 12);
+            this.Display_fitnessClass.Location = new System.Drawing.Point(39, 12);
             this.Display_fitnessClass.Name = "Display_fitnessClass";
-            this.Display_fitnessClass.Size = new System.Drawing.Size(319, 49);
+            this.Display_fitnessClass.Size = new System.Drawing.Size(327, 49);
             this.Display_fitnessClass.TabIndex = 3;
             this.Display_fitnessClass.Text = "Wyświetl zajęcia";
             this.Display_fitnessClass.UseVisualStyleBackColor = true;
@@ -88,7 +90,7 @@
             // 
             this.Display_TypeClass.Location = new System.Drawing.Point(39, 107);
             this.Display_TypeClass.Name = "Display_TypeClass";
-            this.Display_TypeClass.Size = new System.Drawing.Size(319, 37);
+            this.Display_TypeClass.Size = new System.Drawing.Size(326, 37);
             this.Display_TypeClass.TabIndex = 4;
             this.Display_TypeClass.Text = "Wyświetl typ zajęć";
             this.Display_TypeClass.UseVisualStyleBackColor = true;
@@ -96,18 +98,18 @@
             // 
             // Add_Rese
             // 
-            this.Add_Rese.Location = new System.Drawing.Point(58, 35);
+            this.Add_Rese.Location = new System.Drawing.Point(39, 14);
             this.Add_Rese.Name = "Add_Rese";
             this.Add_Rese.Size = new System.Drawing.Size(310, 31);
             this.Add_Rese.TabIndex = 5;
-            this.Add_Rese.Text = "Zarządzanie Reserwacjami";
+            this.Add_Rese.Text = "Zarządzaj rezerwacjami";
             this.Add_Rese.UseVisualStyleBackColor = true;
             this.Add_Rese.Click += new System.EventHandler(this.Add_Rese_Click);
             // 
             // Display_OptionButton
             // 
             this.Display_OptionButton.AutoSize = true;
-            this.Display_OptionButton.Location = new System.Drawing.Point(533, 41);
+            this.Display_OptionButton.Location = new System.Drawing.Point(531, 148);
             this.Display_OptionButton.Name = "Display_OptionButton";
             this.Display_OptionButton.Size = new System.Drawing.Size(107, 20);
             this.Display_OptionButton.TabIndex = 6;
@@ -122,7 +124,7 @@
             this.Display_Options.Controls.Add(this.Display_reservation);
             this.Display_Options.Controls.Add(this.Display_TypeClass);
             this.Display_Options.Controls.Add(this.Display_payment);
-            this.Display_Options.Location = new System.Drawing.Point(533, 81);
+            this.Display_Options.Location = new System.Drawing.Point(687, 41);
             this.Display_Options.Name = "Display_Options";
             this.Display_Options.Size = new System.Drawing.Size(376, 215);
             this.Display_Options.TabIndex = 7;
@@ -130,7 +132,7 @@
             // management
             // 
             this.management.AutoSize = true;
-            this.management.Location = new System.Drawing.Point(533, 323);
+            this.management.Location = new System.Drawing.Point(531, 357);
             this.management.Name = "management";
             this.management.Size = new System.Drawing.Size(105, 20);
             this.management.TabIndex = 8;
@@ -141,15 +143,36 @@
             // 
             // ManagmentOptions
             // 
+            this.ManagmentOptions.Controls.Add(this.ManagingPayment);
+            this.ManagmentOptions.Controls.Add(this.ManagingReservation);
             this.ManagmentOptions.Controls.Add(this.Add_Rese);
-            this.ManagmentOptions.Location = new System.Drawing.Point(533, 349);
+            this.ManagmentOptions.Location = new System.Drawing.Point(687, 323);
             this.ManagmentOptions.Name = "ManagmentOptions";
-            this.ManagmentOptions.Size = new System.Drawing.Size(465, 192);
+            this.ManagmentOptions.Size = new System.Drawing.Size(376, 143);
             this.ManagmentOptions.TabIndex = 9;
+            // 
+            // ManagingPayment
+            // 
+            this.ManagingPayment.Location = new System.Drawing.Point(39, 90);
+            this.ManagingPayment.Name = "ManagingPayment";
+            this.ManagingPayment.Size = new System.Drawing.Size(310, 33);
+            this.ManagingPayment.TabIndex = 7;
+            this.ManagingPayment.Text = "Zarządzaj płatnościami";
+            this.ManagingPayment.UseVisualStyleBackColor = true;
+            // 
+            // ManagingReservation
+            // 
+            this.ManagingReservation.Location = new System.Drawing.Point(39, 52);
+            this.ManagingReservation.Name = "ManagingReservation";
+            this.ManagingReservation.Size = new System.Drawing.Size(310, 31);
+            this.ManagingReservation.TabIndex = 6;
+            this.ManagingReservation.Text = "Zarządaj zajęciami";
+            this.ManagingReservation.UseVisualStyleBackColor = true;
+            this.ManagingReservation.Click += new System.EventHandler(this.ManagingReservation_Click);
             // 
             // Logout
             // 
-            this.Logout.Location = new System.Drawing.Point(99, 505);
+            this.Logout.Location = new System.Drawing.Point(545, 495);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(143, 36);
             this.Logout.TabIndex = 10;
@@ -161,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 654);
+            this.ClientSize = new System.Drawing.Size(1221, 804);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.ManagmentOptions);
             this.Controls.Add(this.management);
@@ -191,5 +214,7 @@
         private System.Windows.Forms.RadioButton management;
         private System.Windows.Forms.Panel ManagmentOptions;
         private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.Button ManagingPayment;
+        private System.Windows.Forms.Button ManagingReservation;
     }
 }

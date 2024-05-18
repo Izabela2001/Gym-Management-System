@@ -152,6 +152,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FitnessClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FitnessClass.Designer.cs">
+      <DependentUpon>FitnessClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reservations\AddReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     <Compile Include="Reservations\UpdateReservation.Designer.cs">
       <DependentUpon>UpdateReservation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FitnessClass.resx">
+      <DependentUpon>FitnessClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservations\AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,7 +266,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FitnessClass\" />
     <Folder Include="IMG\" />
+    <Folder Include="Payment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

@@ -56,7 +56,7 @@
             // 
             // OpptionsUpdate
             // 
-            this.OpptionsUpdate.Location = new System.Drawing.Point(78, 279);
+            this.OpptionsUpdate.Location = new System.Drawing.Point(66, 268);
             this.OpptionsUpdate.Name = "OpptionsUpdate";
             this.OpptionsUpdate.Size = new System.Drawing.Size(646, 143);
             this.OpptionsUpdate.TabIndex = 7;

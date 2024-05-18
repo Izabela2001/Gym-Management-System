@@ -26,7 +26,8 @@ namespace Gym_Management_System
             {
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser, R.DateReservation, R.IdFitnessClass\r\nFROM RESERVATION AS R\r\n", con);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation as 'Identyfikator rezewacji', R.IdUser as 'Identyfikator użytkownika', R.DateReservation as 'Data rezerwacji'," +
+                    " R.IdFitnessClass as 'Identyfikator zajęć'\r\nFROM RESERVATION AS R\r\n", con);
                 DataSet ds = new DataSet();
 
                 adapter.Fill(ds, "RESERVATION");
@@ -84,7 +85,9 @@ namespace Gym_Management_System
             {
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("  SELECT R.IdReservation, R.IdUser, R.DateReservation, R.IdFitnessClass\r\nFROM RESERVATION AS R\r\nWHERE CAST(R.DateReservation AS DATE) = CAST(GETDATE() AS DATE);", con);
+                SqlDataAdapter adapter = new SqlDataAdapter("  SELECT R.IdReservation as 'Identyfikator rezerwacji', R.IdUser as 'Identyfikator użytkownika'," +
+                    " R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\nFROM RESERVATION AS R\r\n" +
+                    "WHERE CAST(R.DateReservation AS DATE) = CAST(GETDATE() AS DATE);", con);
                 DataSet ds = new DataSet();
 
                 adapter.Fill(ds, "RESERVATION");
@@ -109,7 +112,9 @@ namespace Gym_Management_System
             {
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser, R.DateReservation, R.IdFitnessClass\r\nFROM RESERVATION AS R\r\nWHERE R.DateReservation < GETDATE()", con);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation as 'Identyfikator rezerwacji', R.IdUser as 'Identyfikator użytkownika', " +
+                    "R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\n" +
+                    "FROM RESERVATION AS R\r\nWHERE R.DateReservation < GETDATE()", con);
                 DataSet ds = new DataSet();
 
                 adapter.Fill(ds, "RESERVATION");
@@ -126,5 +131,7 @@ namespace Gym_Management_System
                 con.Close();
             }
         }
+
+        
     }
 }
