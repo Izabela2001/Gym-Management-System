@@ -217,6 +217,9 @@
     <EmbeddedResource Include="FitnessClass.resx">
       <DependentUpon>FitnessClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservations\AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
