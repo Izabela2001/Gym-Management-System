@@ -143,7 +143,7 @@ namespace Gym_Management_System
             }
             else
             {
-                Return.Text = "Proszę wybrać rezerwacje do usunięcia";
+                Return_Reservation.Text = "Proszę wybrać rezerwacje do usunięcia";
                 
             }
 

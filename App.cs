@@ -186,5 +186,12 @@ namespace Gym_Management_System
             fitnessClass.Show();
             this.Hide();
         }
+
+        private void ManagingPayment_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Hide();
+        }
     }
 }

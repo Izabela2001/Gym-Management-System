@@ -37,7 +37,7 @@
             this.ToDayReservation = new System.Windows.Forms.Button();
             this.AllReservation = new System.Windows.Forms.Button();
             this.DeleteReservation = new System.Windows.Forms.Button();
-            this.Return = new System.Windows.Forms.Label();
+            this.Return_Reservation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,7 +123,7 @@
             // 
             // DeleteReservation
             // 
-            this.DeleteReservation.Location = new System.Drawing.Point(24, 402);
+            this.DeleteReservation.Location = new System.Drawing.Point(24, 411);
             this.DeleteReservation.Name = "DeleteReservation";
             this.DeleteReservation.Size = new System.Drawing.Size(269, 33);
             this.DeleteReservation.TabIndex = 8;
@@ -131,21 +131,21 @@
             this.DeleteReservation.UseVisualStyleBackColor = true;
             this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
             // 
-            // Return
+            // Return_Reservation
             // 
-            this.Return.AutoSize = true;
-            this.Return.Location = new System.Drawing.Point(403, 419);
-            this.Return.Name = "Return";
-            this.Return.Size = new System.Drawing.Size(44, 16);
-            this.Return.TabIndex = 9;
-            this.Return.Text = "label1";
+            this.Return_Reservation.AutoSize = true;
+            this.Return_Reservation.Location = new System.Drawing.Point(329, 428);
+            this.Return_Reservation.Name = "Return_Reservation";
+            this.Return_Reservation.Size = new System.Drawing.Size(44, 16);
+            this.Return_Reservation.TabIndex = 9;
+            this.Return_Reservation.Text = "label1";
             // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 665);
-            this.Controls.Add(this.Return);
+            this.Controls.Add(this.Return_Reservation);
             this.Controls.Add(this.DeleteReservation);
             this.Controls.Add(this.AllReservation);
             this.Controls.Add(this.ToDayReservation);
@@ -174,6 +174,6 @@
         private System.Windows.Forms.Button ToDayReservation;
         private System.Windows.Forms.Button AllReservation;
         private System.Windows.Forms.Button DeleteReservation;
-        private System.Windows.Forms.Label Return;
+        private System.Windows.Forms.Label Return_Reservation;
     }
 }
