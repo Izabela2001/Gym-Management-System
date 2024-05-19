@@ -36,6 +36,8 @@
             this.ReservationShow = new System.Windows.Forms.DataGridView();
             this.ToDayReservation = new System.Windows.Forms.Button();
             this.AllReservation = new System.Windows.Forms.Button();
+            this.DeleteReservation = new System.Windows.Forms.Button();
+            this.Return = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@
             // 
             // ReturnApp
             // 
-            this.ReturnApp.Location = new System.Drawing.Point(24, 353);
+            this.ReturnApp.Location = new System.Drawing.Point(24, 356);
             this.ReturnApp.Name = "ReturnApp";
             this.ReturnApp.Size = new System.Drawing.Size(269, 39);
             this.ReturnApp.TabIndex = 3;
@@ -119,11 +121,32 @@
             this.AllReservation.UseVisualStyleBackColor = true;
             this.AllReservation.Click += new System.EventHandler(this.AllReservation_Click);
             // 
+            // DeleteReservation
+            // 
+            this.DeleteReservation.Location = new System.Drawing.Point(24, 402);
+            this.DeleteReservation.Name = "DeleteReservation";
+            this.DeleteReservation.Size = new System.Drawing.Size(269, 33);
+            this.DeleteReservation.TabIndex = 8;
+            this.DeleteReservation.Text = "Usuń rezerwacje";
+            this.DeleteReservation.UseVisualStyleBackColor = true;
+            this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
+            // 
+            // Return
+            // 
+            this.Return.AutoSize = true;
+            this.Return.Location = new System.Drawing.Point(403, 419);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(44, 16);
+            this.Return.TabIndex = 9;
+            this.Return.Text = "label1";
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 447);
+            this.ClientSize = new System.Drawing.Size(1188, 665);
+            this.Controls.Add(this.Return);
+            this.Controls.Add(this.DeleteReservation);
             this.Controls.Add(this.AllReservation);
             this.Controls.Add(this.ToDayReservation);
             this.Controls.Add(this.ReservationShow);
@@ -136,6 +159,7 @@
             this.Text = "Reservation";
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +173,7 @@
         private System.Windows.Forms.DataGridView ReservationShow;
         private System.Windows.Forms.Button ToDayReservation;
         private System.Windows.Forms.Button AllReservation;
+        private System.Windows.Forms.Button DeleteReservation;
+        private System.Windows.Forms.Label Return;
     }
 }

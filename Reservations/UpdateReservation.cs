@@ -17,7 +17,7 @@ namespace Gym_Management_System.Reservations
         {
             InitializeComponent();
             ShowReservation();
-            OpptionsUpdate.Visible = false;
+            
         }
 
         private void ShowReservationAfter_Click(object sender, EventArgs e)
@@ -51,7 +51,8 @@ namespace Gym_Management_System.Reservations
 
         private void Update_Reservation_Click(object sender, EventArgs e)
         {
-            OpptionsUpdate.Visible=true;
+           
+            
         }
-    }
+        }
 }

@@ -132,6 +132,49 @@ namespace Gym_Management_System
             }
         }
 
-        
+        private void DeleteReservation_Click(object sender, EventArgs e)
+        {
+
+            if(ReservationShow.SelectedRows.Count > 0)
+            {
+               int reservationId = Convert.ToInt32(ReservationShow.SelectedRows[0].Cells["Identyfikator rezerwacji"].Value);
+                DeleteReservationOne(reservationId);
+                ShowReservation();
+            }
+            else
+            {
+                Return.Text = "Proszę wybrać rezerwacje do usunięcia";
+                
+            }
+
+        }
+        /*Trzeba dodać warunki typu jak jest zakcpetowały to zmnijeszamy w tabeli zajęćia*/
+        /*Jeżeli jest płatność przypisana to usuwamy*/
+        private void DeleteReservationOne(int reservationId)
+        {
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.Open();
+                string query = "DELETE FROM RESERVATION WHERE IdReservation = @ReservationId";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@ReservationId", reservationId);
+
+    
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Rezerwacja została pomyślnie usunięta.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
