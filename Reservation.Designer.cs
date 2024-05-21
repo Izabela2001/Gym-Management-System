@@ -141,6 +141,7 @@
             this.Return_Reservation.Size = new System.Drawing.Size(44, 16);
             this.Return_Reservation.TabIndex = 9;
             this.Return_Reservation.Text = "label1";
+            this.Return_Reservation.Click += new System.EventHandler(this.Return_Reservation_Click);
             // 
             // Reservation
             // 
