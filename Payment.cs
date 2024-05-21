@@ -130,5 +130,36 @@ namespace Gym_Management_System
                 con.Close();
             }
         }
+
+        
+
+        private void UpdatePayment_Click(object sender, EventArgs e)
+        {
+           Pay.UpdatePay  updatePay = new Pay.UpdatePay();
+            updatePay.Show();
+            this.Close();
+
+        }
+
+        private void AddPayment_Click(object sender, EventArgs e)
+        {
+            Pay.AddPay addPay = new Pay.AddPay();
+            addPay.Show();
+            this.Close();
+        }
+
+        private void Main_Click(object sender, EventArgs e)
+        {
+            App app = new App();    
+            app.Show();
+            this.Close();
+        }
+
+        private void ApprovedPayment_Click(object sender, EventArgs e)
+        {
+            Pay.ApprovedPay approvedPay = new Pay.ApprovedPay();    
+            approvedPay.Show();
+            this.Close();
+        }
     }
 }
