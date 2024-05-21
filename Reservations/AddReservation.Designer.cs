@@ -82,6 +82,7 @@
             this.List_FitnessClass.ScrollAlwaysVisible = true;
             this.List_FitnessClass.Size = new System.Drawing.Size(187, 55);
             this.List_FitnessClass.TabIndex = 7;
+            this.List_FitnessClass.SelectedIndexChanged += new System.EventHandler(this.List_FitnessClass_SelectedIndexChanged_1);
             // 
             // label2
             // 
@@ -102,7 +103,6 @@
             this.OpptionPaid.TabIndex = 11;
             this.OpptionPaid.TabStop = false;
             this.OpptionPaid.Text = "Właściowści";
-            //this.OpptionPaid.Enter += new System.EventHandler(this.OpptionPaid_Enter);
             // 
             // label3
             // 

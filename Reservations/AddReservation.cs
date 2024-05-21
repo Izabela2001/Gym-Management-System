@@ -278,5 +278,10 @@ namespace Gym_Management_System
             app.Show();
             this.Close();
         }
+
+        private void List_FitnessClass_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
