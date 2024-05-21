@@ -134,7 +134,7 @@
             // Return_Reservation
             // 
             this.Return_Reservation.AutoSize = true;
-            this.Return_Reservation.Location = new System.Drawing.Point(329, 428);
+            this.Return_Reservation.Location = new System.Drawing.Point(316, 419);
             this.Return_Reservation.Name = "Return_Reservation";
             this.Return_Reservation.Size = new System.Drawing.Size(44, 16);
             this.Return_Reservation.TabIndex = 9;

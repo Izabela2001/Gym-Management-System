@@ -65,9 +65,9 @@
             // 
             // Dodaj_Reserwacje
             // 
-            this.Dodaj_Reserwacje.Location = new System.Drawing.Point(93, 449);
+            this.Dodaj_Reserwacje.Location = new System.Drawing.Point(165, 355);
             this.Dodaj_Reserwacje.Name = "Dodaj_Reserwacje";
-            this.Dodaj_Reserwacje.Size = new System.Drawing.Size(75, 27);
+            this.Dodaj_Reserwacje.Size = new System.Drawing.Size(118, 43);
             this.Dodaj_Reserwacje.TabIndex = 4;
             this.Dodaj_Reserwacje.Text = "Dodaj";
             this.Dodaj_Reserwacje.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // Result_add
             // 
             this.Result_add.AutoSize = true;
-            this.Result_add.Location = new System.Drawing.Point(40, 388);
+            this.Result_add.Location = new System.Drawing.Point(39, 408);
             this.Result_add.Name = "Result_add";
             this.Result_add.Size = new System.Drawing.Size(44, 16);
             this.Result_add.TabIndex = 15;
@@ -155,9 +155,9 @@
             // 
             // Return_Reservation
             // 
-            this.Return_Reservation.Location = new System.Drawing.Point(185, 449);
+            this.Return_Reservation.Location = new System.Drawing.Point(74, 449);
             this.Return_Reservation.Name = "Return_Reservation";
-            this.Return_Reservation.Size = new System.Drawing.Size(102, 27);
+            this.Return_Reservation.Size = new System.Drawing.Size(136, 43);
             this.Return_Reservation.TabIndex = 16;
             this.Return_Reservation.Text = "Wróć";
             this.Return_Reservation.UseVisualStyleBackColor = true;
@@ -173,9 +173,9 @@
             // 
             // Main
             // 
-            this.Main.Location = new System.Drawing.Point(329, 452);
+            this.Main.Location = new System.Drawing.Point(249, 449);
             this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(75, 23);
+            this.Main.Size = new System.Drawing.Size(147, 43);
             this.Main.TabIndex = 18;
             this.Main.Text = "Strona główna";
             this.Main.UseVisualStyleBackColor = true;

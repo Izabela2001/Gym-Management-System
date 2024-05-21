@@ -39,11 +39,11 @@
             // Reservation_NoApproved
             // 
             this.Reservation_NoApproved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Reservation_NoApproved.Location = new System.Drawing.Point(12, 12);
+            this.Reservation_NoApproved.Location = new System.Drawing.Point(25, 12);
             this.Reservation_NoApproved.Name = "Reservation_NoApproved";
             this.Reservation_NoApproved.RowHeadersWidth = 51;
             this.Reservation_NoApproved.RowTemplate.Height = 24;
-            this.Reservation_NoApproved.Size = new System.Drawing.Size(758, 268);
+            this.Reservation_NoApproved.Size = new System.Drawing.Size(745, 268);
             this.Reservation_NoApproved.TabIndex = 0;
             // 
             // Approved
@@ -59,7 +59,7 @@
             // Result_Approved
             // 
             this.Result_Approved.AutoSize = true;
-            this.Result_Approved.Location = new System.Drawing.Point(33, 383);
+            this.Result_Approved.Location = new System.Drawing.Point(32, 387);
             this.Result_Approved.Name = "Result_Approved";
             this.Result_Approved.Size = new System.Drawing.Size(44, 16);
             this.Result_Approved.TabIndex = 2;
@@ -77,9 +77,9 @@
             // 
             // Main
             // 
-            this.Main.Location = new System.Drawing.Point(540, 307);
+            this.Main.Location = new System.Drawing.Point(540, 312);
             this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(211, 55);
+            this.Main.Size = new System.Drawing.Size(230, 45);
             this.Main.TabIndex = 4;
             this.Main.Text = "Strona główna";
             this.Main.UseVisualStyleBackColor = true;
