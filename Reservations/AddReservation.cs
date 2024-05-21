@@ -93,17 +93,21 @@ namespace Gym_Management_System
             }
 
             string selectedFitnessClassName = List_FitnessClass.SelectedItem.ToString();
-
+            /*Warunek z datami się wali*/
             SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;");
             try
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(
-                    "SELECT FC.IdFitnessClass, FC.StartDate, FC.EndDate, FC.LevelOfAdvancement " +
-                    "FROM FITNESS_CLASS AS FC " +
-                    "INNER JOIN TYPE_FITNESS_CLASS AS TFC ON FC.IdTypeFitness = TFC.IdTypeFitness " +
-                    "WHERE TFC.NAME = @FitnessClassName;", con);
+            "SELECT FC.IdFitnessClass, FC.StartDate, FC.EndDate, FC.LevelOfAdvancement " +
+            "FROM FITNESS_CLASS AS FC " +
+            "INNER JOIN TYPE_FITNESS_CLASS AS TFC ON FC.IdTypeFitness = TFC.IdTypeFitness " +
+            "WHERE TFC.NAME = @FitnessClassName " +
+            "AND FC.StartDate <= @CurrentDate " +
+            "AND FC.EndDate >= @CurrentDate;", con);
                 cmd.Parameters.AddWithValue("@FitnessClassName", selectedFitnessClassName);
+                cmd.Parameters.AddWithValue("@CurrentDate", DateTime.Now);
+
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
