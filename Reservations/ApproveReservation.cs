@@ -36,7 +36,7 @@ namespace Gym_Management_System
             {
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation as 'Identyfikator rezerwacji', R.IdUser as 'Identyfikator użytkownika'" +
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser as 'Identyfikator użytkownika'" +
                     ", R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\n" +
                     "FROM RESERVATION AS R\r\nWHERE R.IsAccepted = 0 AND R.DateReservation >= GETDATE();", con);
                 DataSet ds = new DataSet();

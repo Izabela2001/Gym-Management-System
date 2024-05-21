@@ -73,7 +73,7 @@
             // 
             // ReturnApp
             // 
-            this.ReturnApp.Location = new System.Drawing.Point(24, 356);
+            this.ReturnApp.Location = new System.Drawing.Point(24, 392);
             this.ReturnApp.Name = "ReturnApp";
             this.ReturnApp.Size = new System.Drawing.Size(269, 39);
             this.ReturnApp.TabIndex = 3;
@@ -93,9 +93,11 @@
             // 
             // ReservationShow
             // 
+            this.ReservationShow.AllowUserToAddRows = false;
             this.ReservationShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ReservationShow.Location = new System.Drawing.Point(310, 26);
             this.ReservationShow.Name = "ReservationShow";
+            this.ReservationShow.ReadOnly = true;
             this.ReservationShow.RowHeadersWidth = 51;
             this.ReservationShow.RowTemplate.Height = 24;
             this.ReservationShow.Size = new System.Drawing.Size(866, 369);
@@ -123,7 +125,7 @@
             // 
             // DeleteReservation
             // 
-            this.DeleteReservation.Location = new System.Drawing.Point(24, 411);
+            this.DeleteReservation.Location = new System.Drawing.Point(24, 353);
             this.DeleteReservation.Name = "DeleteReservation";
             this.DeleteReservation.Size = new System.Drawing.Size(269, 33);
             this.DeleteReservation.TabIndex = 8;

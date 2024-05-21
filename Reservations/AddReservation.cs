@@ -269,14 +269,14 @@ namespace Gym_Management_System
         {
             Reservation reservation = new Reservation();
             reservation.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Main_Click(object sender, EventArgs e)
         {
             App app = new App();
             app.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
