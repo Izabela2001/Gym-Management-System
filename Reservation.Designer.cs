@@ -37,6 +37,8 @@
             this.ToDayReservation = new System.Windows.Forms.Button();
             this.AllReservation = new System.Windows.Forms.Button();
             this.DeleteReservation = new System.Windows.Forms.Button();
+
+            this.Return_Reservation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,7 @@
             // 
             // ReturnApp
             // 
-            this.ReturnApp.Location = new System.Drawing.Point(24, 353);
+            this.ReturnApp.Location = new System.Drawing.Point(24, 392);
             this.ReturnApp.Name = "ReturnApp";
             this.ReturnApp.Size = new System.Drawing.Size(269, 39);
             this.ReturnApp.TabIndex = 3;
@@ -92,9 +94,11 @@
             // 
             // ReservationShow
             // 
+            this.ReservationShow.AllowUserToAddRows = false;
             this.ReservationShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ReservationShow.Location = new System.Drawing.Point(310, 26);
             this.ReservationShow.Name = "ReservationShow";
+            this.ReservationShow.ReadOnly = true;
             this.ReservationShow.RowHeadersWidth = 51;
             this.ReservationShow.RowTemplate.Height = 24;
             this.ReservationShow.Size = new System.Drawing.Size(866, 369);
@@ -122,6 +126,25 @@
             // 
             // DeleteReservation
             // 
+            this.DeleteReservation.Location = new System.Drawing.Point(24, 353);
+            this.DeleteReservation.Name = "DeleteReservation";
+            this.DeleteReservation.Size = new System.Drawing.Size(269, 33);
+            this.DeleteReservation.TabIndex = 8;
+            this.DeleteReservation.Text = "Usuń rezerwacje";
+            this.DeleteReservation.UseVisualStyleBackColor = true;
+            this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
+            // 
+            // Return_Reservation
+            // 
+            this.Return_Reservation.AutoSize = true;
+            this.Return_Reservation.Location = new System.Drawing.Point(316, 419);
+            this.Return_Reservation.Name = "Return_Reservation";
+            this.Return_Reservation.Size = new System.Drawing.Size(44, 16);
+            this.Return_Reservation.TabIndex = 9;
+            this.Return_Reservation.Text = "label1";
+            this.Return_Reservation.Click += new System.EventHandler(this.Return_Reservation_Click);
+            // 
+
             this.DeleteReservation.Location = new System.Drawing.Point(24, 399);
             this.DeleteReservation.Name = "DeleteReservation";
             this.DeleteReservation.Size = new System.Drawing.Size(269, 36);
@@ -131,11 +154,16 @@
             this.DeleteReservation.UseVisualStyleBackColor = true;
             this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
             // 
+
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.ClientSize = new System.Drawing.Size(1188, 665);
+            this.Controls.Add(this.Return_Reservation);
             this.ClientSize = new System.Drawing.Size(1188, 447);
+
             this.Controls.Add(this.DeleteReservation);
             this.Controls.Add(this.AllReservation);
             this.Controls.Add(this.ToDayReservation);
@@ -149,6 +177,7 @@
             this.Text = "Reservation";
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -163,5 +192,8 @@
         private System.Windows.Forms.Button ToDayReservation;
         private System.Windows.Forms.Button AllReservation;
         private System.Windows.Forms.Button DeleteReservation;
+
+        private System.Windows.Forms.Label Return_Reservation;
+
     }
 }

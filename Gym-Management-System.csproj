@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -71,7 +71,9 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.6.35.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -158,11 +160,29 @@
     <Compile Include="FitnessClass.Designer.cs">
       <DependentUpon>FitnessClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="FitnessClasses\AddNewFitnessClass.cs">
+    <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FitnessClasses\AddNewFitnessClass.Designer.cs">
-      <DependentUpon>AddNewFitnessClass.cs</DependentUpon>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pay\AddPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pay\AddPay.Designer.cs">
+      <DependentUpon>AddPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pay\ApprovedPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pay\ApprovedPay.Designer.cs">
+      <DependentUpon>ApprovedPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pay\UpdatePay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pay\UpdatePay.Designer.cs">
+      <DependentUpon>UpdatePay.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservations\AddReservation.cs">
       <SubType>Form</SubType>
@@ -206,6 +226,7 @@
     </Compile>
     <Compile Include="Reservation.Designer.cs">
       <DependentUpon>Reservation.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Reservations\UpdateReservation.cs">
       <SubType>Form</SubType>
@@ -216,8 +237,11 @@
     <EmbeddedResource Include="FitnessClass.resx">
       <DependentUpon>FitnessClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FitnessClasses\AddNewFitnessClass.resx">
-      <DependentUpon>AddNewFitnessClass.cs</DependentUpon>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay\UpdatePay.resx">
+      <DependentUpon>UpdatePay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservations\AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
@@ -276,7 +300,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IMG\" />
-    <Folder Include="Payment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

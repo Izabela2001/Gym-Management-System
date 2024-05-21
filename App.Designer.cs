@@ -159,6 +159,7 @@
             this.ManagingPayment.TabIndex = 7;
             this.ManagingPayment.Text = "Zarządzaj płatnościami";
             this.ManagingPayment.UseVisualStyleBackColor = true;
+            this.ManagingPayment.Click += new System.EventHandler(this.ManagingPayment_Click);
             // 
             // ManagingReservation
             // 

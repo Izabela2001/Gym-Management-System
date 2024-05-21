@@ -41,7 +41,7 @@
             // 
             // AllFitnessClass
             // 
-            this.AllFitnessClass.Location = new System.Drawing.Point(52, 46);
+            this.AllFitnessClass.Location = new System.Drawing.Point(52, 63);
             this.AllFitnessClass.Name = "AllFitnessClass";
             this.AllFitnessClass.Size = new System.Drawing.Size(287, 41);
             this.AllFitnessClass.TabIndex = 0;

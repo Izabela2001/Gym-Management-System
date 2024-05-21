@@ -42,6 +42,7 @@
             this.Return_Reservation = new System.Windows.Forms.Button();
             this.IdUserReservation = new System.Windows.Forms.MaskedTextBox();
             this.Main = new System.Windows.Forms.Button();
+            this.FitnessClasTime = new System.Windows.Forms.CheckedListBox();
             this.OpptionPaid.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,9 +66,9 @@
             // 
             // Dodaj_Reserwacje
             // 
-            this.Dodaj_Reserwacje.Location = new System.Drawing.Point(93, 449);
+            this.Dodaj_Reserwacje.Location = new System.Drawing.Point(165, 355);
             this.Dodaj_Reserwacje.Name = "Dodaj_Reserwacje";
-            this.Dodaj_Reserwacje.Size = new System.Drawing.Size(75, 27);
+            this.Dodaj_Reserwacje.Size = new System.Drawing.Size(118, 43);
             this.Dodaj_Reserwacje.TabIndex = 4;
             this.Dodaj_Reserwacje.Text = "Dodaj";
             this.Dodaj_Reserwacje.UseVisualStyleBackColor = true;
@@ -81,6 +82,7 @@
             this.List_FitnessClass.ScrollAlwaysVisible = true;
             this.List_FitnessClass.Size = new System.Drawing.Size(187, 55);
             this.List_FitnessClass.TabIndex = 7;
+            this.List_FitnessClass.SelectedIndexChanged += new System.EventHandler(this.List_FitnessClass_SelectedIndexChanged_1);
             // 
             // label2
             // 
@@ -101,7 +103,6 @@
             this.OpptionPaid.TabIndex = 11;
             this.OpptionPaid.TabStop = false;
             this.OpptionPaid.Text = "Właściowści";
-            this.OpptionPaid.Enter += new System.EventHandler(this.OpptionPaid_Enter);
             // 
             // label3
             // 
@@ -147,7 +148,7 @@
             // Result_add
             // 
             this.Result_add.AutoSize = true;
-            this.Result_add.Location = new System.Drawing.Point(40, 388);
+            this.Result_add.Location = new System.Drawing.Point(39, 408);
             this.Result_add.Name = "Result_add";
             this.Result_add.Size = new System.Drawing.Size(44, 16);
             this.Result_add.TabIndex = 15;
@@ -155,9 +156,9 @@
             // 
             // Return_Reservation
             // 
-            this.Return_Reservation.Location = new System.Drawing.Point(185, 449);
+            this.Return_Reservation.Location = new System.Drawing.Point(74, 449);
             this.Return_Reservation.Name = "Return_Reservation";
-            this.Return_Reservation.Size = new System.Drawing.Size(102, 27);
+            this.Return_Reservation.Size = new System.Drawing.Size(136, 43);
             this.Return_Reservation.TabIndex = 16;
             this.Return_Reservation.Text = "Wróć";
             this.Return_Reservation.UseVisualStyleBackColor = true;
@@ -173,19 +174,28 @@
             // 
             // Main
             // 
-            this.Main.Location = new System.Drawing.Point(329, 452);
+            this.Main.Location = new System.Drawing.Point(249, 449);
             this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(75, 23);
+            this.Main.Size = new System.Drawing.Size(147, 43);
             this.Main.TabIndex = 18;
             this.Main.Text = "Strona główna";
             this.Main.UseVisualStyleBackColor = true;
             this.Main.Click += new System.EventHandler(this.Main_Click);
             // 
+            // FitnessClasTime
+            // 
+            this.FitnessClasTime.FormattingEnabled = true;
+            this.FitnessClasTime.Location = new System.Drawing.Point(416, 108);
+            this.FitnessClasTime.Name = "FitnessClasTime";
+            this.FitnessClasTime.Size = new System.Drawing.Size(221, 55);
+            this.FitnessClasTime.TabIndex = 19;
+            // 
             // AddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 596);
+            this.ClientSize = new System.Drawing.Size(705, 596);
+            this.Controls.Add(this.FitnessClasTime);
             this.Controls.Add(this.Main);
             this.Controls.Add(this.IdUserReservation);
             this.Controls.Add(this.Return_Reservation);
@@ -223,5 +233,6 @@
         private System.Windows.Forms.Button Return_Reservation;
         private System.Windows.Forms.MaskedTextBox IdUserReservation;
         private System.Windows.Forms.Button Main;
+        private System.Windows.Forms.CheckedListBox FitnessClasTime;
     }
 }
