@@ -240,6 +240,9 @@
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pay\UpdatePay.resx">
+      <DependentUpon>UpdatePay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservations\AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
