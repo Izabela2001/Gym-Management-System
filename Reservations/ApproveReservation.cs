@@ -36,7 +36,8 @@ namespace Gym_Management_System
             {
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser, R.DateReservation, R.IdFitnessClass\r\n" +
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation as 'Identyfikator rezerwacji', R.IdUser as 'Identyfikator użytkownika'" +
+                    ", R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\n" +
                     "FROM RESERVATION AS R\r\nWHERE R.IsAccepted = 0 AND R.DateReservation >= GETDATE();", con);
                 DataSet ds = new DataSet();
 
@@ -139,7 +140,7 @@ namespace Gym_Management_System
             }
             else
             {
-                MessageBox.Show("Proszę wybrać rezerwację do zaakceptowania.");
+                Result_Approved.Text = "Proszę wybrać rezerwację do zaakceptowania.";
             }
         }
 
@@ -207,14 +208,14 @@ namespace Gym_Management_System
         {
             Reservation reservation = new Reservation();
             reservation.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Main_Click(object sender, EventArgs e)
         {
             App app = new App();
             app.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

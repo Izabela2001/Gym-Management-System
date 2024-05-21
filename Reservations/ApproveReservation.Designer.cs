@@ -38,11 +38,15 @@
             // 
             // Reservation_NoApproved
             // 
+            this.Reservation_NoApproved.AllowUserToAddRows = false;
+            this.Reservation_NoApproved.AllowUserToDeleteRows = false;
             this.Reservation_NoApproved.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Reservation_NoApproved.Location = new System.Drawing.Point(25, 12);
             this.Reservation_NoApproved.Name = "Reservation_NoApproved";
+            this.Reservation_NoApproved.ReadOnly = true;
             this.Reservation_NoApproved.RowHeadersWidth = 51;
             this.Reservation_NoApproved.RowTemplate.Height = 24;
+            this.Reservation_NoApproved.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Reservation_NoApproved.Size = new System.Drawing.Size(745, 268);
             this.Reservation_NoApproved.TabIndex = 0;
             // 
