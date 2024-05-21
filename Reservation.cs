@@ -133,7 +133,6 @@ namespace Gym_Management_System
 
         private void DeleteReservation_Click(object sender, EventArgs e)
         {
-
             if(ReservationShow.SelectedRows.Count > 0)
             {
                 int reservationId = Convert.ToInt32(ReservationShow.SelectedRows[0].Cells["IdReservation"].Value);
@@ -217,7 +216,6 @@ namespace Gym_Management_System
 
         private void Return_Reservation_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

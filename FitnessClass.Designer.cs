@@ -31,6 +31,11 @@
             this.AllFitnessClass = new System.Windows.Forms.Button();
             this.ViewFitnessClasss = new System.Windows.Forms.DataGridView();
             this.ActiveFitnessClass = new System.Windows.Forms.Button();
+            this.AfterTime = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DeleteFitnessClass = new System.Windows.Forms.Button();
+            this.AddFitnessClass = new System.Windows.Forms.Button();
+            this.Main = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFitnessClasss)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +69,65 @@
             this.ActiveFitnessClass.UseVisualStyleBackColor = true;
             this.ActiveFitnessClass.Click += new System.EventHandler(this.ActiveFitnessClass_Click);
             // 
+            // AfterTime
+            // 
+            this.AfterTime.Location = new System.Drawing.Point(52, 187);
+            this.AfterTime.Name = "AfterTime";
+            this.AfterTime.Size = new System.Drawing.Size(287, 39);
+            this.AfterTime.TabIndex = 3;
+            this.AfterTime.Text = "Wyświetl zajęcia po terminie";
+            this.AfterTime.UseVisualStyleBackColor = true;
+            this.AfterTime.Click += new System.EventHandler(this.AfterTime_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(52, 233);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(287, 38);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Edytuj zajęcia";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // DeleteFitnessClass
+            // 
+            this.DeleteFitnessClass.Location = new System.Drawing.Point(52, 278);
+            this.DeleteFitnessClass.Name = "DeleteFitnessClass";
+            this.DeleteFitnessClass.Size = new System.Drawing.Size(287, 50);
+            this.DeleteFitnessClass.TabIndex = 5;
+            this.DeleteFitnessClass.TabStop = false;
+            this.DeleteFitnessClass.Text = "Usuń zajęcia";
+            this.DeleteFitnessClass.UseVisualStyleBackColor = true;
+            // 
+            // AddFitnessClass
+            // 
+            this.AddFitnessClass.Location = new System.Drawing.Point(52, 335);
+            this.AddFitnessClass.Name = "AddFitnessClass";
+            this.AddFitnessClass.Size = new System.Drawing.Size(287, 39);
+            this.AddFitnessClass.TabIndex = 6;
+            this.AddFitnessClass.Text = "Dodaj zajęcia";
+            this.AddFitnessClass.UseVisualStyleBackColor = true;
+            this.AddFitnessClass.Click += new System.EventHandler(this.AddFitnessClass_Click);
+            // 
+            // Main
+            // 
+            this.Main.Location = new System.Drawing.Point(52, 381);
+            this.Main.Name = "Main";
+            this.Main.Size = new System.Drawing.Size(277, 36);
+            this.Main.TabIndex = 7;
+            this.Main.Text = "Strona główna";
+            this.Main.UseVisualStyleBackColor = true;
+            this.Main.Click += new System.EventHandler(this.Main_Click);
+            // 
             // FitnessClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Main);
+            this.Controls.Add(this.AddFitnessClass);
+            this.Controls.Add(this.DeleteFitnessClass);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AfterTime);
             this.Controls.Add(this.ActiveFitnessClass);
             this.Controls.Add(this.ViewFitnessClasss);
             this.Controls.Add(this.AllFitnessClass);
@@ -84,5 +143,10 @@
         private System.Windows.Forms.Button AllFitnessClass;
         private System.Windows.Forms.DataGridView ViewFitnessClasss;
         private System.Windows.Forms.Button ActiveFitnessClass;
+        private System.Windows.Forms.Button AfterTime;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DeleteFitnessClass;
+        private System.Windows.Forms.Button AddFitnessClass;
+        private System.Windows.Forms.Button Main;
     }
 }
