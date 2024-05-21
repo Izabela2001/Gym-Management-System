@@ -38,7 +38,7 @@ namespace Gym_Management_System
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser as 'Identyfikator użytkownika'" +
                     ", R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\n" +
-                    "FROM RESERVATION AS R\r\nWHERE R.IsAccepted = 0 AND R.DateReservation >= GETDATE();", con);
+                    "FROM RESERVATION AS R\r\nWHERE R.IsAccepted = 0 AND R.DateReservation > GETDATE();", con);
                 DataSet ds = new DataSet();
 
                 adapter.Fill(ds, "RESERVATION");
@@ -157,30 +157,23 @@ namespace Gym_Management_System
 
                     string updateReservation = "UPDATE RESERVATION SET IsAccepted = 1 WHERE IdReservation = @ReservationId";
 
-                    
-                    string getActivePlaceQuery = "SELECT ActivePlace FROM FITNESS_CLASS WHERE IdFitnessClass = (SELECT IdFitnessClass FROM RESERVATION WHERE IdReservation = @ReservationId)";
+                   
+                    string getFitnessClassIdQuery = "SELECT IdFitnessClass FROM RESERVATION WHERE IdReservation = @ReservationId";
+                    SqlCommand getFitnessClassIdCmd = new SqlCommand(getFitnessClassIdQuery, con);
+                    getFitnessClassIdCmd.Parameters.AddWithValue("@ReservationId", reservationId);
+                    int fitnessClassId = Convert.ToInt32(getFitnessClassIdCmd.ExecuteScalar());
 
-                    SqlCommand getActivePlaceCmd = new SqlCommand(getActivePlaceQuery, con);
-                    getActivePlaceCmd.Parameters.AddWithValue("@ReservationId", reservationId);
-                    int activePlace = Convert.ToInt32(getActivePlaceCmd.ExecuteScalar());
-
-                    
-                    activePlace++;
-
-                    
-                    string updateFitnessClass = "UPDATE FITNESS_CLASS SET ActivePlace = @ActivePlace " +
-                        "WHERE IdFitnessClass = (SELECT IdFitnessClass FROM RESERVATION WHERE IdReservation = @ReservationId)";
+                   
+                    string increaseActivePlaceQuery = "UPDATE FITNESS_CLASS SET ActivePlace = ActivePlace + 1 WHERE IdFitnessClass = @FitnessClassId";
+                    SqlCommand increaseActivePlaceCmd = new SqlCommand(increaseActivePlaceQuery, con);
+                    increaseActivePlaceCmd.Parameters.AddWithValue("@FitnessClassId", fitnessClassId);
+                    increaseActivePlaceCmd.ExecuteNonQuery();
 
                     SqlCommand cmd1 = new SqlCommand(updateReservation, con);
                     cmd1.Parameters.AddWithValue("@ReservationId", reservationId);
                     int resultApproved = cmd1.ExecuteNonQuery();
 
-                    SqlCommand cmd2 = new SqlCommand(updateFitnessClass, con);
-                    cmd2.Parameters.AddWithValue("@ReservationId", reservationId);
-                    cmd2.Parameters.AddWithValue("@ActivePlace", activePlace);
-                    int resultUpdateFitnessClass = cmd2.ExecuteNonQuery();
-
-                    if (resultApproved > 0 && resultUpdateFitnessClass > 0)
+                    if (resultApproved > 0)
                     {
                         Result_Approved.Text = "Rezerwacja została zaakceptowana";
                         ShowNoApprovedReservation();
@@ -189,7 +182,6 @@ namespace Gym_Management_System
                     {
                         Result_Approved.Text = "Rezerwacja nie została zaakceptowana";
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -201,6 +193,7 @@ namespace Gym_Management_System
                 }
             }
         }
+
 
 
 
