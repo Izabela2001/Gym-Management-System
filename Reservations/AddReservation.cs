@@ -23,8 +23,9 @@ namespace Gym_Management_System
             FillListFitness();
             OpptionPaid.Visible = false;
             FillListTypePayment();
-
+            List_FitnessClass.SelectedIndexChanged += List_FitnessClass_SelectedIndexChanged; // Dodajemy obsługę zdarzenia
         }
+
         private void FillListFitness()
         {
             SqlConnection con = new SqlConnection();
@@ -83,51 +84,56 @@ namespace Gym_Management_System
             }
         }
 
-
-
-        private void OpptionPaid_Enter(object sender, EventArgs e)
+        private void FillListFitnessClassTime()
         {
-
-        }
-
-        private int GetFitnessClassId()
-        {
-            int fitnessClassId = 0;
-
             if (List_FitnessClass.SelectedItem == null)
             {
                 MessageBox.Show("Wybierz typ zajęć fitness z listy.");
-                return fitnessClassId;
+                return;
             }
 
             string selectedFitnessClassName = List_FitnessClass.SelectedItem.ToString();
-            using (SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;"))
+
+            SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;");
+            try
             {
-                try
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT FC.IdFitnessClass, FC.StartDate, FC.EndDate, FC.LevelOfAdvancement " +
+                    "FROM FITNESS_CLASS AS FC " +
+                    "INNER JOIN TYPE_FITNESS_CLASS AS TFC ON FC.IdTypeFitness = TFC.IdTypeFitness " +
+                    "WHERE TFC.NAME = @FitnessClassName;", con);
+                cmd.Parameters.AddWithValue("@FitnessClassName", selectedFitnessClassName);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "FITNESS_CLASS");
+
+                FitnessClasTime.Items.Clear();
+                foreach (DataRow row in ds.Tables["FITNESS_CLASS"].Rows)
                 {
-                    con.Open();
-
-                    SqlCommand cmd = new SqlCommand("SELECT IdTypeFitness FROM TYPE_FITNESS_CLASS WHERE NAME = @FitnessClassName;", con);
-                    cmd.Parameters.AddWithValue("@FitnessClassName", selectedFitnessClassName);
-
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        fitnessClassId = (int)result;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nie znaleziono identyfikatora zajęć fitness dla wybranej nazwy.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Problem z pobieraniem Id typu zajęć: " + ex.Message);
+                    string displayText = $"{row["IdFitnessClass"]}: {row["StartDate"]} - {row["EndDate"]} ({row["LevelOfAdvancement"]})";
+                    FitnessClasTime.Items.Add(displayText);
                 }
             }
-            return fitnessClassId;
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
         }
+
+        private void List_FitnessClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillListFitnessClassTime();
+        }
+
         private int GetPaymentTypeId()
         {
             int paymentTypeId = 0;
@@ -171,14 +177,12 @@ namespace Gym_Management_System
         {
             paymentStatus = 1;
             OpptionPaid.Visible = true;
-
         }
 
         private void FalsePaid_CheckedChanged(object sender, EventArgs e)
         {
             paymentStatus = 0;
             OpptionPaid.Visible = false;
-
         }
 
         private void Dodaj_Reserwacje_Click(object sender, EventArgs e)
@@ -189,55 +193,63 @@ namespace Gym_Management_System
                 MessageBox.Show("Wprowadź poprawnie ID użytkownika");
                 return;
             }
+
+            if (FitnessClasTime.SelectedItem == null)
+            {
+                MessageBox.Show("Wybierz zajęcia fitness z listy.");
+                return;
+            }
+
+            string selectedFitnessClassText = FitnessClasTime.SelectedItem.ToString();
+            int fitnessClassId = int.Parse(selectedFitnessClassText.Split(':')[0]);
+
             DateTime dataReservation = DateTime.Now;
-            DateTime dataPaid = DateTime.Now;
             int isAccepted = 0;
-            int fitnessClassId = GetFitnessClassId();
 
             SqlConnection con = new SqlConnection();
             try
             {
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
+
                 SqlCommand getLastIdCmd = new SqlCommand("SELECT MAX(IdReservation) FROM RESERVATION", con);
                 int lastId = (int)getLastIdCmd.ExecuteScalar();
                 int newId = lastId + 1;
-                SqlCommand cmd = new SqlCommand("INSERT INTO RESERVATION (IdReservation,IdUser, DateReservation, " +
-                    "IsAccepted, IdFitnessClass) VALUES (@IdReservation,@UserId, @DateReservation, @IsAccepted, @FitnessClassId)", con);
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO RESERVATION (IdReservation, IdUser, DateReservation, IsAccepted, IdFitnessClass) " +
+                    "VALUES (@IdReservation, @UserId, @DateReservation, @IsAccepted, @FitnessClassId)", con);
                 cmd.Parameters.AddWithValue("@IdReservation", newId);
                 cmd.Parameters.AddWithValue("@UserId", userId);
                 cmd.Parameters.AddWithValue("@DateReservation", dataReservation);
                 cmd.Parameters.AddWithValue("@IsAccepted", isAccepted);
                 cmd.Parameters.AddWithValue("@FitnessClassId", fitnessClassId);
                 cmd.ExecuteNonQuery();
-                Result_add.Text = "Dodano nową rezewajce";
+                Result_add.Text = "Dodano nową rezerwację";
+
                 if (TruePaid.Checked)
                 {
                     SqlCommand getLastIdPaid = new SqlCommand("SELECT MAX(IdPayment) FROM PAYMENT", con);
                     int lastIdPay = (int)getLastIdPaid.ExecuteScalar();
                     int newIdPay = lastIdPay + 1;
-                    SqlCommand insertPaymentCmd = new SqlCommand("INSERT INTO PAYMENT (IdPayment,IdReservation, IdUser, IdTypePayment, DateOfPayment, IfPaid) " +
-                        "VALUES (@IdPayment,@IdReservation, @UserId, @TypePaymentId, @DateOfPayment, 1)", con);
-                    insertPaymentCmd.Parameters.AddWithValue("@IdPayment", newIdPay);
-                    insertPaymentCmd.Parameters.AddWithValue("@IdReservation", newId);
-                    insertPaymentCmd.Parameters.AddWithValue("@UserId", userId);
 
-                    
                     int typePaymentId = GetPaymentTypeId();
                     if (typePaymentId != 0)
                     {
+                        SqlCommand insertPaymentCmd = new SqlCommand("INSERT INTO PAYMENT (IdPayment, IdReservation, IdUser, IdTypePayment, DateOfPayment, IfPaid) " +
+                            "VALUES (@IdPayment, @IdReservation, @UserId, @TypePaymentId, @DateOfPayment, 1)", con);
+                        insertPaymentCmd.Parameters.AddWithValue("@IdPayment", newIdPay);
+                        insertPaymentCmd.Parameters.AddWithValue("@IdReservation", newId);
+                        insertPaymentCmd.Parameters.AddWithValue("@UserId", userId);
                         insertPaymentCmd.Parameters.AddWithValue("@TypePaymentId", typePaymentId);
-                        insertPaymentCmd.Parameters.AddWithValue("@DateOfPayment", dataPaid);
+                        insertPaymentCmd.Parameters.AddWithValue("@DateOfPayment", DateTime.Now);
                         insertPaymentCmd.ExecuteNonQuery();
-                        Result_add.Text = "Dodano nową rezewajce z płatnością";
+                        Result_add.Text = "Dodano nową rezerwację z płatnością";
                     }
                     else
                     {
                         Result_add.Text = "Nie znaleziono typu płatności dla wybranej nazwy.";
                     }
                 }
-
-                
             }
             catch (Exception ex)
             {
@@ -263,4 +275,4 @@ namespace Gym_Management_System
             this.Hide();
         }
     }
-    }
+}
