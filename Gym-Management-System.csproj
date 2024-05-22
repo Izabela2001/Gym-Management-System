@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -166,11 +166,11 @@
     <Compile Include="Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pay\AddPay.cs">
+    <Compile Include="Pay\AddPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pay\AddPay.Designer.cs">
-      <DependentUpon>AddPay.cs</DependentUpon>
+    <Compile Include="Pay\AddPayment.Designer.cs">
+      <DependentUpon>AddPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Pay\ApprovedPay.cs">
       <SubType>Form</SubType>
@@ -239,6 +239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay\AddPayment.resx">
+      <DependentUpon>AddPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay\ApprovedPay.resx">
+      <DependentUpon>ApprovedPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pay\UpdatePay.resx">
       <DependentUpon>UpdatePay.cs</DependentUpon>
