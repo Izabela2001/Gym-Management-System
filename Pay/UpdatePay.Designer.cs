@@ -31,16 +31,16 @@
             this.ShowPayment = new System.Windows.Forms.DataGridView();
             this.UpdatePayment = new System.Windows.Forms.Button();
             this.OptionsPay = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TypePayment = new System.Windows.Forms.ComboBox();
             this.IdReservation = new System.Windows.Forms.TextBox();
             this.UpdatePaymentPost = new System.Windows.Forms.Button();
             this.IdUser = new System.Windows.Forms.TextBox();
             this.DataPay = new System.Windows.Forms.DateTimePicker();
             this.Answer = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Return = new System.Windows.Forms.Button();
             this.Main = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPayment)).BeginInit();
@@ -86,6 +86,42 @@
             this.OptionsPay.Size = new System.Drawing.Size(427, 239);
             this.OptionsPay.TabIndex = 2;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(33, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Identyfikator rezerwacji:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Rodzaj płatności:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Identyfikator użytkownika:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Data rezerwacji: ";
+            // 
             // TypePayment
             // 
             this.TypePayment.FormattingEnabled = true;
@@ -130,45 +166,8 @@
             this.Answer.AutoSize = true;
             this.Answer.Location = new System.Drawing.Point(484, 386);
             this.Answer.Name = "Answer";
-            this.Answer.Size = new System.Drawing.Size(51, 16);
+            this.Answer.Size = new System.Drawing.Size(0, 16);
             this.Answer.TabIndex = 3;
-            this.Answer.Text = "Answer";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Data rezerwacji: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Identyfikator użytkownika:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Rodzaj płatności:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 147);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Identyfikator rezerwacji:";
             // 
             // Return
             // 

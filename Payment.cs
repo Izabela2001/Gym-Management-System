@@ -143,7 +143,9 @@ namespace Gym_Management_System
 
         private void AddPayment_Click(object sender, EventArgs e)
         {
-            
+            Pay.AddPayment pay = new Pay.AddPayment();
+            pay.Show();
+            this.Close();
         }
 
         private void Main_Click(object sender, EventArgs e)

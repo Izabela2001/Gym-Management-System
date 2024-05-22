@@ -49,12 +49,13 @@
             // Display
             // 
             this.Display.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Display.Location = new System.Drawing.Point(112, 53);
+            this.Display.Location = new System.Drawing.Point(28, 53);
             this.Display.Name = "Display";
             this.Display.RowHeadersWidth = 51;
             this.Display.RowTemplate.Height = 24;
-            this.Display.Size = new System.Drawing.Size(350, 378);
+            this.Display.Size = new System.Drawing.Size(477, 478);
             this.Display.TabIndex = 0;
+            this.Display.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Display_CellContentClick);
             // 
             // Display_reservation
             // 

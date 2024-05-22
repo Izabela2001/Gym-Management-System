@@ -42,11 +42,11 @@
             // ShowPayment
             // 
             this.ShowPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShowPayment.Location = new System.Drawing.Point(346, 50);
+            this.ShowPayment.Location = new System.Drawing.Point(313, 50);
             this.ShowPayment.Name = "ShowPayment";
             this.ShowPayment.RowHeadersWidth = 51;
             this.ShowPayment.RowTemplate.Height = 24;
-            this.ShowPayment.Size = new System.Drawing.Size(494, 329);
+            this.ShowPayment.Size = new System.Drawing.Size(593, 377);
             this.ShowPayment.TabIndex = 0;
             // 
             // ShowNoPaid
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 586);
+            this.ClientSize = new System.Drawing.Size(918, 484);
             this.Controls.Add(this.ApprovedPayment);
             this.Controls.Add(this.Main);
             this.Controls.Add(this.AddPayment);

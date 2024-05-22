@@ -60,9 +60,8 @@
             this.Answer.AutoSize = true;
             this.Answer.Location = new System.Drawing.Point(38, 393);
             this.Answer.Name = "Answer";
-            this.Answer.Size = new System.Drawing.Size(44, 16);
+            this.Answer.Size = new System.Drawing.Size(0, 16);
             this.Answer.TabIndex = 2;
-            this.Answer.Text = "label1";
             // 
             // Return
             // 

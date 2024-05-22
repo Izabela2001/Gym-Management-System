@@ -193,5 +193,10 @@ namespace Gym_Management_System
             payment.Show();
             this.Close();
         }
+
+        private void Display_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
