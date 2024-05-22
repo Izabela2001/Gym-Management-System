@@ -32,7 +32,11 @@ namespace Gym_Management_System.Pay
             {
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment, P.IdReservation, P.IdUser, TP.Name, P.DateOfPayment " +
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment as 'Identyfikator płatności'" +
+                    ", P.IdReservation as 'Identyfikator rezerwacji'" +
+                    ", P.IdUser as 'Identyfikator użytkownika'" +
+                    ", TP.Name 'Typ płatności'" +
+                    ", P.DateOfPayment as 'Data rezerwacji' " +
                     "FROM PAYMENT AS P INNER JOIN TYPE_PAYMENT AS TP ON P.IdTypePayment = TP.IdTypePayment;", con);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "PAYMENT");
@@ -81,11 +85,11 @@ namespace Gym_Management_System.Pay
             {
                 OptionsPay.Visible = true;
                 DataGridViewRow selectedRow = ShowPayment.SelectedRows[0];
-                selectedPaymentId = Convert.ToInt32(selectedRow.Cells["IdPayment"].Value);
-                IdReservation.Text = selectedRow.Cells["IdReservation"].Value.ToString();
-                IdUser.Text = selectedRow.Cells["IdUser"].Value.ToString();
-                DataPay.Text = selectedRow.Cells["DateOfPayment"].Value.ToString();
-                TypePayment.Text = selectedRow.Cells["Name"].Value.ToString();
+                selectedPaymentId = Convert.ToInt32(selectedRow.Cells[0].Value);
+                IdReservation.Text = selectedRow.Cells[1].Value.ToString();
+                IdUser.Text = selectedRow.Cells[2].Value.ToString();
+                DataPay.Text = selectedRow.Cells[4].Value.ToString();
+                TypePayment.Text = selectedRow.Cells[3].Value.ToString();
             }
             else
             {

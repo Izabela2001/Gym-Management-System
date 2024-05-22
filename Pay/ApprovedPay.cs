@@ -21,7 +21,42 @@ namespace Gym_Management_System.Pay
 
         private void Approved_payment_Click(object sender, EventArgs e)
         {
+            if (AllPayment.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = AllPayment.SelectedRows[0];
+                int IdPayment = Convert.ToInt32(selectedRow.Cells[0].Value);
 
+                SqlConnection con = new SqlConnection();
+                try
+                {
+                    con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                    con.Open();
+
+     
+                    string query = "UPDATE PAYMENT SET IfPaid = 1 WHERE IdPayment = @IdPayment";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@IdPayment", IdPayment);
+                    cmd.ExecuteNonQuery();
+
+
+                    Answer.Text = "Płatność została zatwierdzona.";
+
+                    
+                    All_Payment();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Błąd: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            else
+            {
+                Answer.Text = "Wybierz płatność do zatwierdzenia.";
+            }
         }
         private void All_Payment()
         {
@@ -51,6 +86,20 @@ namespace Gym_Management_System.Pay
             {
                 con.Close();
             }
+        }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Close();
+        }
+
+        private void Main_Click(object sender, EventArgs e)
+        {
+            App app = new App();
+            app.Show();
+            this.Close();
         }
     }
 }
