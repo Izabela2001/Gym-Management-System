@@ -177,21 +177,21 @@ namespace Gym_Management_System
             Logging logging = new Logging();
             
             logging.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void ManagingReservation_Click(object sender, EventArgs e)
         {
             FitnessClass fitnessClass = new FitnessClass(); 
             fitnessClass.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void ManagingPayment_Click(object sender, EventArgs e)
         {
             Payment payment = new Payment();
             payment.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

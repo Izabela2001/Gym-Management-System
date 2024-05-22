@@ -112,9 +112,8 @@ namespace Gym_Management_System
 
         private void AddFitnessClass_Click(object sender, EventArgs e)
         {
-            FitnessClasses.AddNewFitnessClass addNewFitnessClass = new FitnessClasses.AddNewFitnessClass();
-            addNewFitnessClass.Show();
-            this.Hide();
+            
+            
 
         }
     }

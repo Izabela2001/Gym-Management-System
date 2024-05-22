@@ -22,6 +22,7 @@ namespace Gym_Management_System.Pay
             ShowPayment.Visible = true;
             ShowAllPayment();
             OptionsPay.Visible = false;
+            LoadTypePayments();
         }
 
         private void ShowAllPayment()
@@ -34,9 +35,34 @@ namespace Gym_Management_System.Pay
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment, P.IdReservation, P.IdUser, TP.Name, P.DateOfPayment " +
                     "FROM PAYMENT AS P INNER JOIN TYPE_PAYMENT AS TP ON P.IdTypePayment = TP.IdTypePayment;", con);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "TYPE_PAYMENT");
+                adapter.Fill(ds, "PAYMENT");
 
-                ShowPayment.DataSource = ds.Tables["TYPE_PAYMENT"];
+                ShowPayment.DataSource = ds.Tables["PAYMENT"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void LoadTypePayments()
+        {
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT IdTypePayment, Name FROM TYPE_PAYMENT", con);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                TypePayment.DataSource = dt;
+                TypePayment.DisplayMember = "Name";
+                TypePayment.ValueMember = "IdTypePayment";
             }
             catch (Exception ex)
             {
@@ -50,31 +76,37 @@ namespace Gym_Management_System.Pay
 
         private void UpdatePayment_Click(object sender, EventArgs e)
         {
-            OptionsPay.Visible = true;
+            
             if (ShowPayment.SelectedRows.Count > 0)
             {
+                OptionsPay.Visible = true;
                 DataGridViewRow selectedRow = ShowPayment.SelectedRows[0];
                 selectedPaymentId = Convert.ToInt32(selectedRow.Cells["IdPayment"].Value);
-                
+                IdReservation.Text = selectedRow.Cells["IdReservation"].Value.ToString();
                 IdUser.Text = selectedRow.Cells["IdUser"].Value.ToString();
                 DataPay.Text = selectedRow.Cells["DateOfPayment"].Value.ToString();
-
-                
-
-               
+                TypePayment.Text = selectedRow.Cells["Name"].Value.ToString();
             }
+            else
+            {
+                Answer.Text = "Prodzę wybrać płatność do aktualizacji";
+
+            }
+
         }
 
         private void UpdatePaymentPost_Click(object sender, EventArgs e)
         {
-            
             int newUserId = Convert.ToInt32(IdUser.Text);
             DateTime newDateOfPayment = Convert.ToDateTime(DataPay.Text);
-
+            int newTypePaymentId = Convert.ToInt32(TypePayment.SelectedValue);
+            int newReservationId  = Convert.ToInt32(IdReservation.Text);
             SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;");
-            SqlCommand cmd = new SqlCommand("UPDATE PAYMENT SET IdUser = @UserId, DateOfPayment = @DateOfPayment WHERE IdPayment = @PaymentId", con);
+            SqlCommand cmd = new SqlCommand("UPDATE PAYMENT SET IdReservation = @IdReservation ,IdUser = @UserId, DateOfPayment = @DateOfPayment, IdTypePayment = @TypePaymentId WHERE IdPayment = @PaymentId", con);
+            cmd.Parameters.AddWithValue("@IdReservation", newReservationId);
             cmd.Parameters.AddWithValue("@UserId", newUserId);
             cmd.Parameters.AddWithValue("@DateOfPayment", newDateOfPayment);
+            cmd.Parameters.AddWithValue("@TypePaymentId", newTypePaymentId);
             cmd.Parameters.AddWithValue("@PaymentId", selectedPaymentId);
 
             try
@@ -83,12 +115,12 @@ namespace Gym_Management_System.Pay
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Płatność została pomyślnie zaktualizowana!");
+                    Answer.Text = "Płatność została pomyślnie zaktualizowana!";
                     ShowAllPayment();
                 }
                 else
                 {
-                    MessageBox.Show("Aktualizacja płatności nie powiodła się!");
+                    Answer.Text ="Aktualizacja płatności nie powiodła się!";
                 }
             }
             catch (Exception ex)
@@ -99,6 +131,21 @@ namespace Gym_Management_System.Pay
             {
                 con.Close();
             }
+        }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Close();
+        }
+
+        private void Main_Click(object sender, EventArgs e)
+        {
+            App app = new App();
+            app.Show();
+            this.Close();
+
         }
     }
 }
