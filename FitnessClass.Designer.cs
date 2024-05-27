@@ -56,7 +56,7 @@
             this.ViewFitnessClasss.Name = "ViewFitnessClasss";
             this.ViewFitnessClasss.RowHeadersWidth = 51;
             this.ViewFitnessClasss.RowTemplate.Height = 24;
-            this.ViewFitnessClasss.Size = new System.Drawing.Size(405, 345);
+            this.ViewFitnessClasss.Size = new System.Drawing.Size(983, 345);
             this.ViewFitnessClasss.TabIndex = 1;
             // 
             // ActiveFitnessClass
@@ -87,6 +87,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Edytuj zajęcia";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DeleteFitnessClass
             // 
@@ -97,6 +98,7 @@
             this.DeleteFitnessClass.TabStop = false;
             this.DeleteFitnessClass.Text = "Usuń zajęcia";
             this.DeleteFitnessClass.UseVisualStyleBackColor = true;
+            this.DeleteFitnessClass.Click += new System.EventHandler(this.DeleteFitnessClass_Click);
             // 
             // AddFitnessClass
             // 
@@ -110,9 +112,9 @@
             // 
             // Main
             // 
-            this.Main.Location = new System.Drawing.Point(52, 381);
+            this.Main.Location = new System.Drawing.Point(52, 380);
             this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(277, 36);
+            this.Main.Size = new System.Drawing.Size(287, 36);
             this.Main.TabIndex = 7;
             this.Main.Text = "Strona główna";
             this.Main.UseVisualStyleBackColor = true;
@@ -122,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1427, 533);
             this.Controls.Add(this.Main);
             this.Controls.Add(this.AddFitnessClass);
             this.Controls.Add(this.DeleteFitnessClass);

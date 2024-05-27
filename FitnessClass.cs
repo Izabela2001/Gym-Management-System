@@ -17,6 +17,7 @@ namespace Gym_Management_System
         {
             InitializeComponent();
             ShowFitnessClass();
+
         }
 
         private void AllFitnessClass_Click(object sender, EventArgs e)
@@ -54,14 +55,14 @@ namespace Gym_Management_System
 
         private void ActiveFitnessClass_Click(object sender, EventArgs e)
         {
-            //trzbaz dobrze zbudować zapytanie sql, które wyswieyli zajećai w termnie i zaktywnymi miejscami
+
             SqlConnection con = new SqlConnection();
             try
             {
-                
+
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                string queryActiveFitnessClass = "";
+                string queryActiveFitnessClass = " SELECT \r\n    fc.[IdFitnessClass],\r\n    fc.[IdTypeFitness],\r\n    tf.[Name],\r\n    fc.[StartDate],\r\n    fc.[EndDate],\r\n    fc.[MaxPlace],\r\n    fc.[ActivePlace],\r\n    fc.[IdEmployee],\r\n    fc.[LevelOdAdvancement]\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\ninner JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() <fc.[EndDate] ;";
                 SqlDataAdapter adapter = new SqlDataAdapter(queryActiveFitnessClass, con);
                 DataSet ds = new DataSet();
 
@@ -86,7 +87,7 @@ namespace Gym_Management_System
 
                 con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                string queryAfterTime = "";
+                string queryAfterTime = " SELECT \r\n    fc.[IdFitnessClass],\r\n    fc.[IdTypeFitness],\r\n    tf.[Name],\r\n    fc.[StartDate],\r\n    fc.[EndDate],\r\n    fc.[MaxPlace],\r\n    fc.[ActivePlace],\r\n    fc.[IdEmployee],\r\n    fc.[LevelOdAdvancement]\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\ninner JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() >fc.[EndDate] ;";
                 SqlDataAdapter adapter = new SqlDataAdapter(queryAfterTime, con);
                 DataSet ds = new DataSet();
 
@@ -112,9 +113,101 @@ namespace Gym_Management_System
 
         private void AddFitnessClass_Click(object sender, EventArgs e)
         {
-            
-            
+            Fitness_Class.AddFitnessClasss addFitnessClasss = new Fitness_Class.AddFitnessClasss();
+            addFitnessClasss.Show();
+            this.Close();
 
+
+        }
+
+        private void DeleteFitnessClass_Click(object sender, EventArgs e)
+        {
+            if (ViewFitnessClasss.SelectedRows.Count > 0)
+            {
+                int selectedIndex = ViewFitnessClasss.SelectedRows[0].Index;
+                int fitnessClassId = Convert.ToInt32(ViewFitnessClasss.Rows[selectedIndex].Cells["Identyfikator typu zajęć"].Value);
+
+                DialogResult result = MessageBox.Show("Czy na pewno chcesz usunąć to zajęcie fitness?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    
+                    if (CheckReservationsExist(fitnessClassId))
+                    {
+                        MessageBox.Show("Nie można usunąć tego zajęcia fitness, ponieważ istnieją dla niego rezerwacje.");
+                        return;
+                    }
+
+                    
+                    DeleteFitnessClassFromDatabase(fitnessClassId);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Proszę wybrać zajęcie fitness do usunięcia.");
+            }
+        }
+
+        private bool CheckReservationsExist(int fitnessClassId)
+        {
+            bool reservationsExist = false;
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.Open();
+
+                
+                string queryCheckReservations = "SELECT COUNT(*) FROM RESERVATION WHERE IdFitnessClass = @FitnessClassId";
+                SqlCommand cmdCheckReservations = new SqlCommand(queryCheckReservations, con);
+                cmdCheckReservations.Parameters.AddWithValue("@FitnessClassId", fitnessClassId);
+                int reservationsCount = (int)cmdCheckReservations.ExecuteScalar();
+
+                reservationsExist = (reservationsCount > 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd podczas sprawdzania rezerwacji: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return reservationsExist;
+        }
+
+        private void DeleteFitnessClassFromDatabase(int fitnessClassId)
+        {
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.Open();
+
+                
+                string queryDeleteFitnessClass = "DELETE FROM FITNESS_CLASS WHERE IdFitnessClass = @FitnessClassId";
+                SqlCommand cmd = new SqlCommand(queryDeleteFitnessClass, con);
+                cmd.Parameters.AddWithValue("@FitnessClassId", fitnessClassId);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Zajęcie fitness zostało pomyślnie usunięte.");
+
+                
+                ShowFitnessClass();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd podczas usuwania zajęcia fitness: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

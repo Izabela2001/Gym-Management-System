@@ -37,7 +37,6 @@
             this.ToDayReservation = new System.Windows.Forms.Button();
             this.AllReservation = new System.Windows.Forms.Button();
             this.DeleteReservation = new System.Windows.Forms.Button();
-
             this.Return_Reservation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).BeginInit();
             this.SuspendLayout();
@@ -126,11 +125,12 @@
             // 
             // DeleteReservation
             // 
-            this.DeleteReservation.Location = new System.Drawing.Point(24, 353);
+            this.DeleteReservation.Location = new System.Drawing.Point(24, 350);
             this.DeleteReservation.Name = "DeleteReservation";
-            this.DeleteReservation.Size = new System.Drawing.Size(269, 33);
+            this.DeleteReservation.Size = new System.Drawing.Size(269, 36);
             this.DeleteReservation.TabIndex = 8;
-            this.DeleteReservation.Text = "Usuń rezerwacje";
+            this.DeleteReservation.TabStop = false;
+            this.DeleteReservation.Text = "Usuń reserwacje";
             this.DeleteReservation.UseVisualStyleBackColor = true;
             this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
             // 
@@ -144,26 +144,12 @@
             this.Return_Reservation.Text = "label1";
             this.Return_Reservation.Click += new System.EventHandler(this.Return_Reservation_Click);
             // 
-
-            this.DeleteReservation.Location = new System.Drawing.Point(24, 399);
-            this.DeleteReservation.Name = "DeleteReservation";
-            this.DeleteReservation.Size = new System.Drawing.Size(269, 36);
-            this.DeleteReservation.TabIndex = 8;
-            this.DeleteReservation.TabStop = false;
-            this.DeleteReservation.Text = "Usuń reserwacje";
-            this.DeleteReservation.UseVisualStyleBackColor = true;
-            this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
-            // 
-
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(1188, 665);
-            this.Controls.Add(this.Return_Reservation);
             this.ClientSize = new System.Drawing.Size(1188, 447);
-
+            this.Controls.Add(this.Return_Reservation);
             this.Controls.Add(this.DeleteReservation);
             this.Controls.Add(this.AllReservation);
             this.Controls.Add(this.ToDayReservation);

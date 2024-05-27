@@ -23,7 +23,8 @@ namespace Gym_Management_System
             FillListFitness();
             OpptionPaid.Visible = false;
             FillListTypePayment();
-            List_FitnessClass.SelectedIndexChanged += List_FitnessClass_SelectedIndexChanged; // Dodajemy obsługę zdarzenia
+            FillListFitnessClassTime();
+            List_FitnessClass.SelectedIndexChanged += List_FitnessClass_SelectedIndexChanged; 
         }
 
         private void FillListFitness()
@@ -86,52 +87,54 @@ namespace Gym_Management_System
 
         private void FillListFitnessClassTime()
         {
+            // Sprawdź, czy wybrano typ zajęć fitness
             if (List_FitnessClass.SelectedItem == null)
             {
                 MessageBox.Show("Wybierz typ zajęć fitness z listy.");
                 return;
             }
 
-            string selectedFitnessClassName = List_FitnessClass.SelectedItem.ToString();
-            /*Warunek z datami się wali*/
+            // Utwórz połączenie do bazy danych
             SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;");
             try
             {
                 con.Open();
+
+                // Zapytanie SQL - wybierz aktualne zajęcia fitness
                 SqlCommand cmd = new SqlCommand(
-            "SELECT FC.IdFitnessClass, FC.StartDate, FC.EndDate, FC.LevelOfAdvancement " +
-            "FROM FITNESS_CLASS AS FC " +
-            "INNER JOIN TYPE_FITNESS_CLASS AS TFC ON FC.IdTypeFitness = TFC.IdTypeFitness " +
-            "WHERE TFC.NAME = @FitnessClassName " +
-            "AND FC.StartDate <= @CurrentDate " +
-            "AND FC.EndDate >= @CurrentDate;", con);
-                cmd.Parameters.AddWithValue("@FitnessClassName", selectedFitnessClassName);
-                cmd.Parameters.AddWithValue("@CurrentDate", DateTime.Now);
+                    "SELECT \r\n    fc.[IdFitnessClass],\r\n    fc.[IdTypeFitness],\r\n    tf.[Name],\r\n    fc.[StartDate],\r\n    fc.[EndDate],\r\n    fc.[MaxPlace],\r\n    fc.[ActivePlace],\r\n    fc.[IdEmployee],\r\n    fc.[LevelOdAdvancement]\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\ninner JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() BETWEEN fc.[StartDate] AND fc.[EndDate];", con);
 
-
+                // Wykonaj zapytanie i zapisz wyniki w DataSet
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "FITNESS_CLASS");
 
-                FitnessClasTime.Items.Clear();
+                // Wyczyść kontrolkę przed dodaniem nowych elementów
+                List_FitnessClass.Items.Clear();
+
+                // Iteruj przez wyniki zapytania i dodaj do kontrolki
                 foreach (DataRow row in ds.Tables["FITNESS_CLASS"].Rows)
                 {
-                    string displayText = $"{row["IdFitnessClass"]}: {row["StartDate"]} - {row["EndDate"]} ({row["LevelOfAdvancement"]})";
-                    FitnessClasTime.Items.Add(displayText);
+                    string displayText = $"{row["IdFitnessClass"]}: {row["Name"]} ({row["IdTypeFitness"]}) - {row["StartDate"]} - {row["EndDate"]} ({row["LevelOdAdvancement"]})";
+                    List_FitnessClass.Items.Add(displayText);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                MessageBox.Show("Wystąpił błąd: " + ex.Message);
             }
             finally
             {
+                // Zamknij połączenie po zakończeniu
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
                 }
             }
         }
+
+
+
 
         private void List_FitnessClass_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -198,13 +201,13 @@ namespace Gym_Management_System
                 return;
             }
 
-            if (FitnessClasTime.SelectedItem == null)
+            if (List_FitnessClass.SelectedItem == null)
             {
                 MessageBox.Show("Wybierz zajęcia fitness z listy.");
                 return;
             }
 
-            string selectedFitnessClassText = FitnessClasTime.SelectedItem.ToString();
+            string selectedFitnessClassText = List_FitnessClass.SelectedItem.ToString();
             int fitnessClassId = int.Parse(selectedFitnessClassText.Split(':')[0]);
 
             DateTime dataReservation = DateTime.Now;

@@ -42,7 +42,6 @@
             this.Return_Reservation = new System.Windows.Forms.Button();
             this.IdUserReservation = new System.Windows.Forms.MaskedTextBox();
             this.Main = new System.Windows.Forms.Button();
-            this.FitnessClasTime = new System.Windows.Forms.CheckedListBox();
             this.OpptionPaid.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,20 +181,11 @@
             this.Main.UseVisualStyleBackColor = true;
             this.Main.Click += new System.EventHandler(this.Main_Click);
             // 
-            // FitnessClasTime
-            // 
-            this.FitnessClasTime.FormattingEnabled = true;
-            this.FitnessClasTime.Location = new System.Drawing.Point(416, 108);
-            this.FitnessClasTime.Name = "FitnessClasTime";
-            this.FitnessClasTime.Size = new System.Drawing.Size(221, 55);
-            this.FitnessClasTime.TabIndex = 19;
-            // 
             // AddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 596);
-            this.Controls.Add(this.FitnessClasTime);
             this.Controls.Add(this.Main);
             this.Controls.Add(this.IdUserReservation);
             this.Controls.Add(this.Return_Reservation);
@@ -233,6 +223,5 @@
         private System.Windows.Forms.Button Return_Reservation;
         private System.Windows.Forms.MaskedTextBox IdUserReservation;
         private System.Windows.Forms.Button Main;
-        private System.Windows.Forms.CheckedListBox FitnessClasTime;
     }
 }
