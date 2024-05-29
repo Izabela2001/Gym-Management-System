@@ -48,12 +48,14 @@
             // 
             // Update_Reservation
             // 
+            this.Update_Reservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Update_Reservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Update_Reservation.Location = new System.Drawing.Point(210, 219);
             this.Update_Reservation.Name = "Update_Reservation";
             this.Update_Reservation.Size = new System.Drawing.Size(365, 43);
             this.Update_Reservation.TabIndex = 4;
             this.Update_Reservation.Text = "Edytuj rezerwacje";
-            this.Update_Reservation.UseVisualStyleBackColor = true;
+            this.Update_Reservation.UseVisualStyleBackColor = false;
             this.Update_Reservation.Click += new System.EventHandler(this.Update_Reservation_Click);
             // 
             // ReservationShow
@@ -72,22 +74,26 @@
             // 
             // Return
             // 
+            this.Return.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Return.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Return.Location = new System.Drawing.Point(94, 281);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(243, 45);
             this.Return.TabIndex = 7;
             this.Return.Text = "Wróć";
-            this.Return.UseVisualStyleBackColor = true;
+            this.Return.UseVisualStyleBackColor = false;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // Main
             // 
+            this.Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Main.ForeColor = System.Drawing.Color.Snow;
             this.Main.Location = new System.Drawing.Point(424, 281);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(252, 45);
             this.Main.TabIndex = 8;
             this.Main.Text = "Strona główna";
-            this.Main.UseVisualStyleBackColor = true;
+            this.Main.UseVisualStyleBackColor = false;
             this.Main.Click += new System.EventHandler(this.Main_Click);
             // 
             // ReservationUpdatePanel
@@ -107,12 +113,14 @@
             // 
             // ReservationPostUpdate
             // 
+            this.ReservationPostUpdate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ReservationPostUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ReservationPostUpdate.Location = new System.Drawing.Point(275, 98);
             this.ReservationPostUpdate.Name = "ReservationPostUpdate";
             this.ReservationPostUpdate.Size = new System.Drawing.Size(119, 42);
             this.ReservationPostUpdate.TabIndex = 3;
             this.ReservationPostUpdate.Text = "Aktualizuj";
-            this.ReservationPostUpdate.UseVisualStyleBackColor = true;
+            this.ReservationPostUpdate.UseVisualStyleBackColor = false;
             this.ReservationPostUpdate.Click += new System.EventHandler(this.ReservationPostUpdate_Click);
             // 
             // label4
@@ -177,9 +185,9 @@
             this.Answer.AutoSize = true;
             this.Answer.Location = new System.Drawing.Point(497, 347);
             this.Answer.Name = "Answer";
-            this.Answer.Size = new System.Drawing.Size(14, 16);
+            this.Answer.Size = new System.Drawing.Size(0, 16);
             this.Answer.TabIndex = 10;
-            this.Answer.Text = "s";
+            this.Answer.Click += new System.EventHandler(this.Answer_Click);
             // 
             // UpdateReservation
             // 

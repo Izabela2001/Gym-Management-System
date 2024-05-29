@@ -32,18 +32,18 @@
             this.AddPaymentWithReservation = new System.Windows.Forms.Button();
             this.Answer = new System.Windows.Forms.Label();
             this.OptionsPayment = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.IdReservation = new System.Windows.Forms.TextBox();
-            this.IdUsers = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TypePaid = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TimePaid = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.YasPaid = new System.Windows.Forms.RadioButton();
-            this.NoPaid = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.PostPaid = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.NoPaid = new System.Windows.Forms.RadioButton();
+            this.YasPaid = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TimePaid = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TypePaid = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.IdUsers = new System.Windows.Forms.TextBox();
+            this.IdReservation = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Return = new System.Windows.Forms.Button();
             this.Main = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AllReservationNoPay)).BeginInit();
@@ -62,12 +62,14 @@
             // 
             // AddPaymentWithReservation
             // 
+            this.AddPaymentWithReservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AddPaymentWithReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AddPaymentWithReservation.Location = new System.Drawing.Point(835, 60);
             this.AddPaymentWithReservation.Name = "AddPaymentWithReservation";
             this.AddPaymentWithReservation.Size = new System.Drawing.Size(170, 42);
             this.AddPaymentWithReservation.TabIndex = 1;
             this.AddPaymentWithReservation.Text = "Dodaj płatność";
-            this.AddPaymentWithReservation.UseVisualStyleBackColor = true;
+            this.AddPaymentWithReservation.UseVisualStyleBackColor = false;
             this.AddPaymentWithReservation.Click += new System.EventHandler(this.AddPaymentWithReservation_Click);
             // 
             // Answer
@@ -97,83 +99,26 @@
             this.OptionsPayment.Size = new System.Drawing.Size(378, 327);
             this.OptionsPayment.TabIndex = 3;
             // 
-            // label1
+            // PostPaid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Identyfikator rezerwacji:";
+            this.PostPaid.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PostPaid.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PostPaid.Location = new System.Drawing.Point(130, 281);
+            this.PostPaid.Name = "PostPaid";
+            this.PostPaid.Size = new System.Drawing.Size(106, 34);
+            this.PostPaid.TabIndex = 11;
+            this.PostPaid.Text = "Dodaj";
+            this.PostPaid.UseVisualStyleBackColor = false;
+            this.PostPaid.Click += new System.EventHandler(this.PostPaid_Click);
             // 
-            // IdReservation
+            // label5
             // 
-            this.IdReservation.Location = new System.Drawing.Point(70, 40);
-            this.IdReservation.Name = "IdReservation";
-            this.IdReservation.ReadOnly = true;
-            this.IdReservation.Size = new System.Drawing.Size(100, 22);
-            this.IdReservation.TabIndex = 1;
-            // 
-            // IdUsers
-            // 
-            this.IdUsers.Location = new System.Drawing.Point(70, 94);
-            this.IdUsers.Name = "IdUsers";
-            this.IdUsers.ReadOnly = true;
-            this.IdUsers.Size = new System.Drawing.Size(100, 22);
-            this.IdUsers.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Identyfikator użytkownika";
-            // 
-            // TypePaid
-            // 
-            this.TypePaid.FormattingEnabled = true;
-            this.TypePaid.Location = new System.Drawing.Point(130, 147);
-            this.TypePaid.Name = "TypePaid";
-            this.TypePaid.Size = new System.Drawing.Size(121, 24);
-            this.TypePaid.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 150);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Rodzaj płatności";
-            // 
-            // TimePaid
-            // 
-            this.TimePaid.Location = new System.Drawing.Point(130, 189);
-            this.TimePaid.Name = "TimePaid";
-            this.TimePaid.Size = new System.Drawing.Size(200, 22);
-            this.TimePaid.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 195);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Data płatności:";
-            // 
-            // YasPaid
-            // 
-            this.YasPaid.AutoSize = true;
-            this.YasPaid.Location = new System.Drawing.Point(130, 227);
-            this.YasPaid.Name = "YasPaid";
-            this.YasPaid.Size = new System.Drawing.Size(96, 20);
-            this.YasPaid.TabIndex = 8;
-            this.YasPaid.TabStop = true;
-            this.YasPaid.Text = "Zapłacone";
-            this.YasPaid.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 245);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Czy opłacone?";
             // 
             // NoPaid
             // 
@@ -186,43 +131,106 @@
             this.NoPaid.Text = "Nie zapłacone";
             this.NoPaid.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // YasPaid
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 245);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Czy opłacone?";
+            this.YasPaid.AutoSize = true;
+            this.YasPaid.Location = new System.Drawing.Point(130, 227);
+            this.YasPaid.Name = "YasPaid";
+            this.YasPaid.Size = new System.Drawing.Size(96, 20);
+            this.YasPaid.TabIndex = 8;
+            this.YasPaid.TabStop = true;
+            this.YasPaid.Text = "Zapłacone";
+            this.YasPaid.UseVisualStyleBackColor = true;
             // 
-            // PostPaid
+            // label4
             // 
-            this.PostPaid.Location = new System.Drawing.Point(130, 281);
-            this.PostPaid.Name = "PostPaid";
-            this.PostPaid.Size = new System.Drawing.Size(75, 23);
-            this.PostPaid.TabIndex = 11;
-            this.PostPaid.Text = "Dodaj";
-            this.PostPaid.UseVisualStyleBackColor = true;
-            this.PostPaid.Click += new System.EventHandler(this.PostPaid_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 195);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Data płatności:";
+            // 
+            // TimePaid
+            // 
+            this.TimePaid.Location = new System.Drawing.Point(130, 189);
+            this.TimePaid.Name = "TimePaid";
+            this.TimePaid.Size = new System.Drawing.Size(200, 22);
+            this.TimePaid.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 150);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Rodzaj płatności";
+            // 
+            // TypePaid
+            // 
+            this.TypePaid.FormattingEnabled = true;
+            this.TypePaid.Location = new System.Drawing.Point(130, 147);
+            this.TypePaid.Name = "TypePaid";
+            this.TypePaid.Size = new System.Drawing.Size(121, 24);
+            this.TypePaid.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Identyfikator użytkownika";
+            // 
+            // IdUsers
+            // 
+            this.IdUsers.Location = new System.Drawing.Point(70, 94);
+            this.IdUsers.Name = "IdUsers";
+            this.IdUsers.ReadOnly = true;
+            this.IdUsers.Size = new System.Drawing.Size(100, 22);
+            this.IdUsers.TabIndex = 2;
+            // 
+            // IdReservation
+            // 
+            this.IdReservation.Location = new System.Drawing.Point(70, 40);
+            this.IdReservation.Name = "IdReservation";
+            this.IdReservation.ReadOnly = true;
+            this.IdReservation.Size = new System.Drawing.Size(100, 22);
+            this.IdReservation.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Identyfikator rezerwacji:";
             // 
             // Return
             // 
+            this.Return.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Return.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Return.Location = new System.Drawing.Point(835, 12);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(170, 38);
             this.Return.TabIndex = 4;
             this.Return.Text = "Wróć";
-            this.Return.UseVisualStyleBackColor = true;
+            this.Return.UseVisualStyleBackColor = false;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // Main
             // 
+            this.Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Main.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Main.Location = new System.Drawing.Point(1048, 27);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(131, 48);
             this.Main.TabIndex = 5;
             this.Main.Text = "Strona główna";
-            this.Main.UseVisualStyleBackColor = true;
+            this.Main.UseVisualStyleBackColor = false;
             this.Main.Click += new System.EventHandler(this.Main_Click);
             // 
             // AddPayment

@@ -47,12 +47,14 @@
             // 
             // Approved_payment
             // 
+            this.Approved_payment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Approved_payment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Approved_payment.Location = new System.Drawing.Point(287, 316);
             this.Approved_payment.Name = "Approved_payment";
             this.Approved_payment.Size = new System.Drawing.Size(194, 56);
             this.Approved_payment.TabIndex = 1;
             this.Approved_payment.Text = "Akceptuj płatność";
-            this.Approved_payment.UseVisualStyleBackColor = true;
+            this.Approved_payment.UseVisualStyleBackColor = false;
             this.Approved_payment.Click += new System.EventHandler(this.Approved_payment_Click);
             // 
             // Answer
@@ -65,22 +67,26 @@
             // 
             // Return
             // 
+            this.Return.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Return.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Return.Location = new System.Drawing.Point(81, 316);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(185, 56);
             this.Return.TabIndex = 3;
             this.Return.Text = "Wróć";
-            this.Return.UseVisualStyleBackColor = true;
+            this.Return.UseVisualStyleBackColor = false;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // Main
             // 
+            this.Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Main.ForeColor = System.Drawing.SystemColors.Control;
             this.Main.Location = new System.Drawing.Point(504, 316);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(202, 56);
             this.Main.TabIndex = 4;
             this.Main.Text = "Strona główna";
-            this.Main.UseVisualStyleBackColor = true;
+            this.Main.UseVisualStyleBackColor = false;
             this.Main.Click += new System.EventHandler(this.Main_Click);
             // 
             // ApprovedPay

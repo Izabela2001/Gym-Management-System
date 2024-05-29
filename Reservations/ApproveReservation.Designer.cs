@@ -52,12 +52,14 @@
             // 
             // Approved
             // 
+            this.Approved.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Approved.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Approved.Location = new System.Drawing.Point(25, 311);
             this.Approved.Name = "Approved";
             this.Approved.Size = new System.Drawing.Size(244, 47);
             this.Approved.TabIndex = 1;
             this.Approved.Text = "Akceptuj";
-            this.Approved.UseVisualStyleBackColor = true;
+            this.Approved.UseVisualStyleBackColor = false;
             this.Approved.Click += new System.EventHandler(this.Approved_Click);
             // 
             // Result_Approved
@@ -65,28 +67,31 @@
             this.Result_Approved.AutoSize = true;
             this.Result_Approved.Location = new System.Drawing.Point(32, 387);
             this.Result_Approved.Name = "Result_Approved";
-            this.Result_Approved.Size = new System.Drawing.Size(44, 16);
+            this.Result_Approved.Size = new System.Drawing.Size(0, 16);
             this.Result_Approved.TabIndex = 2;
-            this.Result_Approved.Text = "label1";
             // 
             // Return_reservation
             // 
+            this.Return_reservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Return_reservation.ForeColor = System.Drawing.Color.Snow;
             this.Return_reservation.Location = new System.Drawing.Point(275, 312);
             this.Return_reservation.Name = "Return_reservation";
             this.Return_reservation.Size = new System.Drawing.Size(259, 45);
             this.Return_reservation.TabIndex = 3;
             this.Return_reservation.Text = "Wróć";
-            this.Return_reservation.UseVisualStyleBackColor = true;
+            this.Return_reservation.UseVisualStyleBackColor = false;
             this.Return_reservation.Click += new System.EventHandler(this.Return_reservation_Click);
             // 
             // Main
             // 
+            this.Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Main.ForeColor = System.Drawing.Color.Snow;
             this.Main.Location = new System.Drawing.Point(540, 312);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(230, 45);
             this.Main.TabIndex = 4;
             this.Main.Text = "Strona główna";
-            this.Main.UseVisualStyleBackColor = true;
+            this.Main.UseVisualStyleBackColor = false;
             this.Main.Click += new System.EventHandler(this.Main_Click);
             // 
             // ApproveReservation
