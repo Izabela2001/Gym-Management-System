@@ -160,6 +160,12 @@
     <Compile Include="FitnessClass.Designer.cs">
       <DependentUpon>FitnessClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fitness_Class\AddFitnessClasss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fitness_Class\AddFitnessClasss.Designer.cs">
+      <DependentUpon>AddFitnessClasss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,12 +213,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FitnessoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Logging.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +237,9 @@
     <EmbeddedResource Include="FitnessClass.resx">
       <DependentUpon>FitnessClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fitness_Class\AddFitnessClasss.resx">
+      <DependentUpon>AddFitnessClasss.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reservations\ApproveReservation.resx">
       <DependentUpon>ApproveReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logging.resx">
       <DependentUpon>Logging.cs</DependentUpon>

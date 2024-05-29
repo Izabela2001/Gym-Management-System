@@ -62,12 +62,14 @@
             // 
             // UpdatePayment
             // 
+            this.UpdatePayment.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UpdatePayment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.UpdatePayment.Location = new System.Drawing.Point(260, 296);
             this.UpdatePayment.Name = "UpdatePayment";
             this.UpdatePayment.Size = new System.Drawing.Size(204, 42);
             this.UpdatePayment.TabIndex = 1;
             this.UpdatePayment.Text = "Edytuj płatność";
-            this.UpdatePayment.UseVisualStyleBackColor = true;
+            this.UpdatePayment.UseVisualStyleBackColor = false;
             this.UpdatePayment.Click += new System.EventHandler(this.UpdatePayment_Click);
             // 
             // OptionsPay
@@ -139,12 +141,14 @@
             // 
             // UpdatePaymentPost
             // 
-            this.UpdatePaymentPost.Location = new System.Drawing.Point(153, 194);
+            this.UpdatePaymentPost.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UpdatePaymentPost.ForeColor = System.Drawing.SystemColors.Control;
+            this.UpdatePaymentPost.Location = new System.Drawing.Point(161, 176);
             this.UpdatePaymentPost.Name = "UpdatePaymentPost";
-            this.UpdatePaymentPost.Size = new System.Drawing.Size(75, 23);
+            this.UpdatePaymentPost.Size = new System.Drawing.Size(94, 51);
             this.UpdatePaymentPost.TabIndex = 3;
             this.UpdatePaymentPost.Text = "Aktualizuj";
-            this.UpdatePaymentPost.UseVisualStyleBackColor = true;
+            this.UpdatePaymentPost.UseVisualStyleBackColor = false;
             this.UpdatePaymentPost.Click += new System.EventHandler(this.UpdatePaymentPost_Click);
             // 
             // IdUser
@@ -171,22 +175,26 @@
             // 
             // Return
             // 
+            this.Return.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Return.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Return.Location = new System.Drawing.Point(58, 296);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(187, 42);
             this.Return.TabIndex = 4;
             this.Return.Text = "Wróć";
-            this.Return.UseVisualStyleBackColor = true;
+            this.Return.UseVisualStyleBackColor = false;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // Main
             // 
+            this.Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Main.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Main.Location = new System.Drawing.Point(478, 296);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(229, 42);
             this.Main.TabIndex = 5;
             this.Main.Text = "Strona główna";
-            this.Main.UseVisualStyleBackColor = true;
+            this.Main.UseVisualStyleBackColor = false;
             this.Main.Click += new System.EventHandler(this.Main_Click);
             // 
             // UpdatePay

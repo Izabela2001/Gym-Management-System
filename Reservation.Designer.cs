@@ -37,66 +37,75 @@
             this.ToDayReservation = new System.Windows.Forms.Button();
             this.AllReservation = new System.Windows.Forms.Button();
             this.DeleteReservation = new System.Windows.Forms.Button();
-
             this.Return_Reservation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).BeginInit();
             this.SuspendLayout();
             // 
             // AddReservation
             // 
+            this.AddReservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AddReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AddReservation.Location = new System.Drawing.Point(24, 149);
             this.AddReservation.Name = "AddReservation";
             this.AddReservation.Size = new System.Drawing.Size(269, 40);
             this.AddReservation.TabIndex = 0;
             this.AddReservation.Text = "Dodaj rezerwacje";
-            this.AddReservation.UseVisualStyleBackColor = true;
+            this.AddReservation.UseVisualStyleBackColor = false;
             this.AddReservation.Click += new System.EventHandler(this.AddReservation_Click);
             // 
             // Approve_Reservation
             // 
+            this.Approve_Reservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Approve_Reservation.ForeColor = System.Drawing.SystemColors.Control;
             this.Approve_Reservation.Location = new System.Drawing.Point(24, 195);
             this.Approve_Reservation.Name = "Approve_Reservation";
             this.Approve_Reservation.Size = new System.Drawing.Size(269, 46);
             this.Approve_Reservation.TabIndex = 1;
             this.Approve_Reservation.Text = "Akceptuj rezerwacje";
-            this.Approve_Reservation.UseVisualStyleBackColor = true;
+            this.Approve_Reservation.UseVisualStyleBackColor = false;
             this.Approve_Reservation.Click += new System.EventHandler(this.Approve_Reservation_Click);
             // 
             // UpdateReservation
             // 
+            this.UpdateReservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UpdateReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.UpdateReservation.Location = new System.Drawing.Point(24, 247);
             this.UpdateReservation.Name = "UpdateReservation";
             this.UpdateReservation.Size = new System.Drawing.Size(269, 39);
             this.UpdateReservation.TabIndex = 2;
             this.UpdateReservation.Text = "Aktualizuj rezerwacje";
-            this.UpdateReservation.UseVisualStyleBackColor = true;
+            this.UpdateReservation.UseVisualStyleBackColor = false;
             this.UpdateReservation.Click += new System.EventHandler(this.UpdateReservation_Click);
             // 
             // ReturnApp
             // 
-            this.ReturnApp.Location = new System.Drawing.Point(24, 392);
+            this.ReturnApp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ReturnApp.ForeColor = System.Drawing.Color.Snow;
+            this.ReturnApp.Location = new System.Drawing.Point(24, 375);
             this.ReturnApp.Name = "ReturnApp";
             this.ReturnApp.Size = new System.Drawing.Size(269, 39);
             this.ReturnApp.TabIndex = 3;
             this.ReturnApp.Text = "Strona główna";
-            this.ReturnApp.UseVisualStyleBackColor = true;
+            this.ReturnApp.UseVisualStyleBackColor = false;
             this.ReturnApp.Click += new System.EventHandler(this.ReturnApp_Click);
             // 
             // ShowReservationAfter
             // 
+            this.ShowReservationAfter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ShowReservationAfter.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ShowReservationAfter.Location = new System.Drawing.Point(24, 80);
             this.ShowReservationAfter.Name = "ShowReservationAfter";
             this.ShowReservationAfter.Size = new System.Drawing.Size(269, 63);
             this.ShowReservationAfter.TabIndex = 4;
             this.ShowReservationAfter.Text = "Rezerwacje po terminie";
-            this.ShowReservationAfter.UseVisualStyleBackColor = true;
+            this.ShowReservationAfter.UseVisualStyleBackColor = false;
             this.ShowReservationAfter.Click += new System.EventHandler(this.ShowReservationAfter_Click);
             // 
             // ReservationShow
             // 
             this.ReservationShow.AllowUserToAddRows = false;
             this.ReservationShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReservationShow.Location = new System.Drawing.Point(310, 26);
+            this.ReservationShow.Location = new System.Drawing.Point(319, 26);
             this.ReservationShow.Name = "ReservationShow";
             this.ReservationShow.ReadOnly = true;
             this.ReservationShow.RowHeadersWidth = 51;
@@ -106,32 +115,39 @@
             // 
             // ToDayReservation
             // 
+            this.ToDayReservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ToDayReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ToDayReservation.Location = new System.Drawing.Point(24, 26);
             this.ToDayReservation.Name = "ToDayReservation";
             this.ToDayReservation.Size = new System.Drawing.Size(269, 48);
             this.ToDayReservation.TabIndex = 6;
             this.ToDayReservation.Text = "Dzisiejsze reserwacje";
-            this.ToDayReservation.UseVisualStyleBackColor = true;
+            this.ToDayReservation.UseVisualStyleBackColor = false;
             this.ToDayReservation.Click += new System.EventHandler(this.ToDayReservation_Click);
             // 
             // AllReservation
             // 
+            this.AllReservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AllReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AllReservation.Location = new System.Drawing.Point(24, 292);
             this.AllReservation.Name = "AllReservation";
-            this.AllReservation.Size = new System.Drawing.Size(269, 55);
+            this.AllReservation.Size = new System.Drawing.Size(269, 35);
             this.AllReservation.TabIndex = 7;
             this.AllReservation.Text = "Wyświetl wszystkie rezerwacje";
-            this.AllReservation.UseVisualStyleBackColor = true;
+            this.AllReservation.UseVisualStyleBackColor = false;
             this.AllReservation.Click += new System.EventHandler(this.AllReservation_Click);
             // 
             // DeleteReservation
             // 
-            this.DeleteReservation.Location = new System.Drawing.Point(24, 353);
+            this.DeleteReservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DeleteReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DeleteReservation.Location = new System.Drawing.Point(24, 333);
             this.DeleteReservation.Name = "DeleteReservation";
-            this.DeleteReservation.Size = new System.Drawing.Size(269, 33);
+            this.DeleteReservation.Size = new System.Drawing.Size(269, 36);
             this.DeleteReservation.TabIndex = 8;
-            this.DeleteReservation.Text = "Usuń rezerwacje";
-            this.DeleteReservation.UseVisualStyleBackColor = true;
+            this.DeleteReservation.TabStop = false;
+            this.DeleteReservation.Text = "Usuń reserwacje";
+            this.DeleteReservation.UseVisualStyleBackColor = false;
             this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
             // 
             // Return_Reservation
@@ -139,31 +155,16 @@
             this.Return_Reservation.AutoSize = true;
             this.Return_Reservation.Location = new System.Drawing.Point(316, 419);
             this.Return_Reservation.Name = "Return_Reservation";
-            this.Return_Reservation.Size = new System.Drawing.Size(44, 16);
+            this.Return_Reservation.Size = new System.Drawing.Size(0, 16);
             this.Return_Reservation.TabIndex = 9;
-            this.Return_Reservation.Text = "label1";
             this.Return_Reservation.Click += new System.EventHandler(this.Return_Reservation_Click);
             // 
-
-            this.DeleteReservation.Location = new System.Drawing.Point(24, 399);
-            this.DeleteReservation.Name = "DeleteReservation";
-            this.DeleteReservation.Size = new System.Drawing.Size(269, 36);
-            this.DeleteReservation.TabIndex = 8;
-            this.DeleteReservation.TabStop = false;
-            this.DeleteReservation.Text = "Usuń reserwacje";
-            this.DeleteReservation.UseVisualStyleBackColor = true;
-            this.DeleteReservation.Click += new System.EventHandler(this.DeleteReservation_Click);
-            // 
-
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(1188, 665);
+            this.ClientSize = new System.Drawing.Size(1220, 473);
             this.Controls.Add(this.Return_Reservation);
-            this.ClientSize = new System.Drawing.Size(1188, 447);
-
             this.Controls.Add(this.DeleteReservation);
             this.Controls.Add(this.AllReservation);
             this.Controls.Add(this.ToDayReservation);

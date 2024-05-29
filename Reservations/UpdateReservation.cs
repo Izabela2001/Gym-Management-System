@@ -136,6 +136,11 @@ namespace Gym_Management_System.Reservations
                 Answer.Text = "Prodzę wybrać rezerwację do aktualizacji";
             }
         }
+
+        private void Answer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
         
     
