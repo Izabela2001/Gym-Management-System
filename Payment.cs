@@ -25,7 +25,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment AS 'Identyfikator płatności', " +
                     "P.IdReservation as 'Identyfikator rezerwacji',\r\n  TP.Name AS 'Rodzaj płatności', " +
@@ -52,7 +52,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment AS 'Identyfikator płatności', P.IdReservation as 'Identyfikator rezerwacji',\r\n  TP.Name AS 'Rodzaj płatności', P.IdUser AS 'Identyfiaktor użytkownika', " +
                     "P.DateOfPayment AS 'Data płatności'\r\n  FROM PAYMENT AS P\r\n  INNER JOIN TYPE_PAYMENT AS TP ON P.IdTypePayment = TP.IdTypePayment;", con);
@@ -77,7 +77,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment AS " +
                     "'Identyfikator płatności', P.IdReservation as 'Identyfikator rezerwacji'," +
@@ -106,7 +106,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment " +
                     "AS 'Identyfikator płatności', " +

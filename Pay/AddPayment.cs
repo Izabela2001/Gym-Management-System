@@ -26,7 +26,7 @@ namespace Gym_Management_System.Pay
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.[IdReservation] AS 'Identyfikator rezerwacji', R.[IdUser] AS 'Identyfikator użytkownika', R.[DateReservation] AS 'Data rezerwacji', R.[IdFitnessClass] AS 'Identyfikator typu zajęć' FROM [Fitnesso].[dbo].[RESERVATION] R LEFT JOIN [Fitnesso].[dbo].[PAYMENT] P ON R.[IdReservation] = P.[IdReservation] WHERE P.[IdPayment] IS NULL", con);
                 DataSet ds = new DataSet();
@@ -49,7 +49,7 @@ namespace Gym_Management_System.Pay
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT IdTypePayment, Name FROM TYPE_PAYMENT", con);
                 DataTable dt = new DataTable();
@@ -107,7 +107,7 @@ namespace Gym_Management_System.Pay
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
 
                 string query = "INSERT INTO PAYMENT (IdReservation, IdUser, IdTypePayment, DateOfPayment, IfPaid) VALUES (@IdReservation, @IdUser, @IdTypePayment, @DateOfPayment, @IfPaid)";
@@ -145,6 +145,11 @@ namespace Gym_Management_System.Pay
             App app = new App();
             app.Show();
             this.Close();
+        }
+
+        private void IdReservation_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
