@@ -166,6 +166,12 @@
     <Compile Include="Fitness_Class\AddFitnessClasss.Designer.cs">
       <DependentUpon>AddFitnessClasss.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fitness_Class\UpdateFitnessClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fitness_Class\UpdateFitnessClasses.Designer.cs">
+      <DependentUpon>UpdateFitnessClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fitness_Class\AddFitnessClasss.resx">
       <DependentUpon>AddFitnessClasss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fitness_Class\UpdateFitnessClasses.resx">
+      <DependentUpon>UpdateFitnessClasses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>

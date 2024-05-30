@@ -65,7 +65,7 @@ namespace Gym_Management_System.Reservations
             }
             else
             {
-                Answer.Text = "Prodzę wybrać rezerwację do aktualizacji";
+                Answer.Text = "Proszę wybrać rezerwację do aktualizacji";
 
             }
 
@@ -133,11 +133,16 @@ namespace Gym_Management_System.Reservations
             }
             else
             {
-                Answer.Text = "Prodzę wybrać rezerwację do aktualizacji";
+                Answer.Text = "Proszę wybrać rezerwację do aktualizacji";
             }
         }
 
         private void Answer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReservationShow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

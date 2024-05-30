@@ -52,7 +52,7 @@
             this.Update_Reservation.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Update_Reservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Update_Reservation.Location = new System.Drawing.Point(11, 330);
-            this.Update_Reservation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Update_Reservation.Margin = new System.Windows.Forms.Padding(2);
             this.Update_Reservation.Name = "Update_Reservation";
             this.Update_Reservation.Size = new System.Drawing.Size(200, 45);
             this.Update_Reservation.TabIndex = 4;
@@ -66,7 +66,7 @@
             this.ReservationShow.AllowUserToDeleteRows = false;
             this.ReservationShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ReservationShow.Location = new System.Drawing.Point(7, 47);
-            this.ReservationShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReservationShow.Margin = new System.Windows.Forms.Padding(2);
             this.ReservationShow.Name = "ReservationShow";
             this.ReservationShow.ReadOnly = true;
             this.ReservationShow.RowHeadersWidth = 51;
@@ -74,13 +74,14 @@
             this.ReservationShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ReservationShow.Size = new System.Drawing.Size(586, 141);
             this.ReservationShow.TabIndex = 6;
+            this.ReservationShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReservationShow_CellContentClick);
             // 
             // Return
             // 
             this.Return.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Return.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Return.Location = new System.Drawing.Point(221, 1);
-            this.Return.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Return.Margin = new System.Windows.Forms.Padding(2);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(190, 30);
             this.Return.TabIndex = 7;
@@ -93,7 +94,7 @@
             this.Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Main.ForeColor = System.Drawing.Color.Snow;
             this.Main.Location = new System.Drawing.Point(413, 1);
-            this.Main.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Main.Margin = new System.Windows.Forms.Padding(2);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(190, 30);
             this.Main.TabIndex = 8;
@@ -112,7 +113,7 @@
             this.ReservationUpdatePanel.Controls.Add(this.UpdateIdClass);
             this.ReservationUpdatePanel.Controls.Add(this.UpdateDate);
             this.ReservationUpdatePanel.Location = new System.Drawing.Point(11, 194);
-            this.ReservationUpdatePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReservationUpdatePanel.Margin = new System.Windows.Forms.Padding(2);
             this.ReservationUpdatePanel.Name = "ReservationUpdatePanel";
             this.ReservationUpdatePanel.Size = new System.Drawing.Size(314, 132);
             this.ReservationUpdatePanel.TabIndex = 9;
@@ -122,7 +123,7 @@
             this.ReservationPostUpdate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ReservationPostUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ReservationPostUpdate.Location = new System.Drawing.Point(210, 86);
-            this.ReservationPostUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReservationPostUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.ReservationPostUpdate.Name = "ReservationPostUpdate";
             this.ReservationPostUpdate.Size = new System.Drawing.Size(89, 34);
             this.ReservationPostUpdate.TabIndex = 3;
@@ -174,7 +175,7 @@
             // UpdateUserId
             // 
             this.UpdateUserId.Location = new System.Drawing.Point(160, 105);
-            this.UpdateUserId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UpdateUserId.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateUserId.Name = "UpdateUserId";
             this.UpdateUserId.Size = new System.Drawing.Size(43, 20);
             this.UpdateUserId.TabIndex = 2;
@@ -182,7 +183,7 @@
             // UpdateIdClass
             // 
             this.UpdateIdClass.Location = new System.Drawing.Point(160, 80);
-            this.UpdateIdClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UpdateIdClass.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateIdClass.Name = "UpdateIdClass";
             this.UpdateIdClass.Size = new System.Drawing.Size(43, 20);
             this.UpdateIdClass.TabIndex = 1;
@@ -190,7 +191,7 @@
             // UpdateDate
             // 
             this.UpdateDate.Location = new System.Drawing.Point(146, 50);
-            this.UpdateDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UpdateDate.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateDate.Name = "UpdateDate";
             this.UpdateDate.Size = new System.Drawing.Size(151, 20);
             this.UpdateDate.TabIndex = 0;
@@ -230,7 +231,7 @@
             this.Controls.Add(this.ReservationShow);
             this.Controls.Add(this.Update_Reservation);
             this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateReservation";
             this.Text = "UpdateReservation";
             ((System.ComponentModel.ISupportInitialize)(this.ReservationShow)).EndInit();

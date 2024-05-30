@@ -45,7 +45,7 @@
             this.AllFitnessClass.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.AllFitnessClass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AllFitnessClass.Location = new System.Drawing.Point(893, 49);
-            this.AllFitnessClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AllFitnessClass.Margin = new System.Windows.Forms.Padding(2);
             this.AllFitnessClass.Name = "AllFitnessClass";
             this.AllFitnessClass.Size = new System.Drawing.Size(202, 38);
             this.AllFitnessClass.TabIndex = 0;
@@ -56,13 +56,14 @@
             // ViewFitnessClasss
             // 
             this.ViewFitnessClasss.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewFitnessClasss.Enabled = false;
             this.ViewFitnessClasss.Location = new System.Drawing.Point(6, 45);
-            this.ViewFitnessClasss.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewFitnessClasss.Margin = new System.Windows.Forms.Padding(2);
             this.ViewFitnessClasss.Name = "ViewFitnessClasss";
+            this.ViewFitnessClasss.ReadOnly = true;
             this.ViewFitnessClasss.RowHeadersWidth = 51;
             this.ViewFitnessClasss.RowTemplate.Height = 24;
-            this.ViewFitnessClasss.Size = new System.Drawing.Size(872, 280);
+            this.ViewFitnessClasss.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ViewFitnessClasss.Size = new System.Drawing.Size(872, 416);
             this.ViewFitnessClasss.TabIndex = 1;
             // 
             // ActiveFitnessClass
@@ -70,7 +71,7 @@
             this.ActiveFitnessClass.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ActiveFitnessClass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ActiveFitnessClass.Location = new System.Drawing.Point(893, 91);
-            this.ActiveFitnessClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ActiveFitnessClass.Margin = new System.Windows.Forms.Padding(2);
             this.ActiveFitnessClass.Name = "ActiveFitnessClass";
             this.ActiveFitnessClass.Size = new System.Drawing.Size(202, 38);
             this.ActiveFitnessClass.TabIndex = 2;
@@ -83,7 +84,7 @@
             this.AfterTime.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.AfterTime.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.AfterTime.Location = new System.Drawing.Point(893, 133);
-            this.AfterTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AfterTime.Margin = new System.Windows.Forms.Padding(2);
             this.AfterTime.Name = "AfterTime";
             this.AfterTime.Size = new System.Drawing.Size(202, 38);
             this.AfterTime.TabIndex = 3;
@@ -96,7 +97,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(893, 234);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 38);
             this.button1.TabIndex = 4;
@@ -109,7 +110,7 @@
             this.DeleteFitnessClass.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DeleteFitnessClass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.DeleteFitnessClass.Location = new System.Drawing.Point(893, 276);
-            this.DeleteFitnessClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeleteFitnessClass.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteFitnessClass.Name = "DeleteFitnessClass";
             this.DeleteFitnessClass.Size = new System.Drawing.Size(202, 38);
             this.DeleteFitnessClass.TabIndex = 5;
@@ -123,7 +124,7 @@
             this.AddFitnessClass.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.AddFitnessClass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.AddFitnessClass.Location = new System.Drawing.Point(893, 192);
-            this.AddFitnessClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddFitnessClass.Margin = new System.Windows.Forms.Padding(2);
             this.AddFitnessClass.Name = "AddFitnessClass";
             this.AddFitnessClass.Size = new System.Drawing.Size(202, 38);
             this.AddFitnessClass.TabIndex = 6;
@@ -136,7 +137,7 @@
             this.Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Main.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Main.Location = new System.Drawing.Point(906, 1);
-            this.Main.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Main.Margin = new System.Windows.Forms.Padding(2);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(200, 30);
             this.Main.TabIndex = 7;
@@ -161,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 342);
+            this.ClientSize = new System.Drawing.Size(1106, 472);
             this.Controls.Add(this.Main);
             this.Controls.Add(this.AddFitnessClass);
             this.Controls.Add(this.DeleteFitnessClass);
@@ -171,7 +172,7 @@
             this.Controls.Add(this.ViewFitnessClasss);
             this.Controls.Add(this.AllFitnessClass);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FitnessClass";
             this.Text = "FitnessClass";
             ((System.ComponentModel.ISupportInitialize)(this.ViewFitnessClasss)).EndInit();
