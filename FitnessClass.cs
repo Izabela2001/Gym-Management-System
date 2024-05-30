@@ -17,8 +17,30 @@ namespace Gym_Management_System
         {
             InitializeComponent();
             ShowFitnessClass();
+            this.Shown += (sender, args) => RefreshData();
 
         }
+
+        public void RefreshData()
+        {
+            ViewFitnessClasss.DataSource = null;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection("Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;"))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT fc.[IdFitnessClass] as 'ID zajęć', tf.[Name] as 'Rodzaj zajęć',fc.[StartDate]as 'Data rozpoczęcia',fc.[EndDate] as 'Data zakończenia',fc.[MaxPlace] as 'Maksymalna ilość miejsc',fc.[ActivePlace] as 'Dostępne miejsca',fc.[IdEmployee] as 'ID pracownika',fc.[LevelOdAdvancement] as 'Poziom trudności'\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\nINNER JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]", con);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    ViewFitnessClasss.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd przy ładowaniu danych: " + ex.Message);
+            }
+        }
+
 
         private void AllFitnessClass_Click(object sender, EventArgs e)
         {
@@ -31,10 +53,10 @@ namespace Gym_Management_System
             {
                 con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                string queryFitnessClass = " SELECT FC.IdFitnessClass AS 'Identyfikator typu zajęć'," +
+                string queryFitnessClass = " SELECT FC.IdFitnessClass AS 'Id typu zajęć'," +
                     " TFC.Name AS 'Rodzaj zajęć',\r\n  FC.StartDate AS 'Data rozpoczęcia', " +
                     "FC.EndDate AS 'Data zakończenia', FC.MaxPlace AS 'Maksymalna ilość miejsc'," +
-                    "\r\n  FC.ActivePlace AS 'Aktywne miejsc', FC.IdEmployee AS 'Identyfikator pracownika'," +
+                    "\r\n  FC.ActivePlace AS 'Aktywne miejsca', FC.IdEmployee AS 'Id pracownika'," +
                     " FC.LevelOdAdvancement AS 'Poziom trudności'\r\n  FROM FITNESS_CLASS AS FC\r\n " +
                     " INNER JOIN TYPE_FITNESS_CLASS AS TFC ON FC.IdTypeFitness = TFC.IdTypeFitness;";
                 SqlDataAdapter adapter = new SqlDataAdapter(queryFitnessClass, con);
@@ -62,7 +84,7 @@ namespace Gym_Management_System
 
                 con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                string queryActiveFitnessClass = " SELECT \r\n    fc.[IdFitnessClass],\r\n    fc.[IdTypeFitness],\r\n    tf.[Name],\r\n    fc.[StartDate],\r\n    fc.[EndDate],\r\n    fc.[MaxPlace],\r\n    fc.[ActivePlace],\r\n    fc.[IdEmployee],\r\n    fc.[LevelOdAdvancement]\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\ninner JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() <fc.[EndDate] ;";
+                string queryActiveFitnessClass = "SELECT fc.[IdFitnessClass] as 'ID zajęć', tf.[Name] as 'Rodzaj zajęć',fc.[StartDate]as 'Data rozpoczęcia',fc.[EndDate] as 'Data zakończenia',fc.[MaxPlace] as 'Maksymalna ilość miejsc',fc.[ActivePlace] as 'Dostępne miejsca',fc.[IdEmployee] as 'ID pracownika',fc.[LevelOdAdvancement] as 'Poziom trudności'\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\nINNER JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() < fc.[EndDate];";
                 SqlDataAdapter adapter = new SqlDataAdapter(queryActiveFitnessClass, con);
                 DataSet ds = new DataSet();
 
@@ -87,7 +109,7 @@ namespace Gym_Management_System
 
                 con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
-                string queryAfterTime = " SELECT \r\n    fc.[IdFitnessClass],\r\n    fc.[IdTypeFitness],\r\n    tf.[Name],\r\n    fc.[StartDate],\r\n    fc.[EndDate],\r\n    fc.[MaxPlace],\r\n    fc.[ActivePlace],\r\n    fc.[IdEmployee],\r\n    fc.[LevelOdAdvancement]\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\ninner JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() >fc.[EndDate] ;";
+                string queryAfterTime = "SELECT fc.[IdFitnessClass] as 'ID zajęć', tf.[Name] as 'Rodzaj zajęć',fc.[StartDate]as 'Data rozpoczęcia',fc.[EndDate] as 'Data zakończenia',fc.[MaxPlace] as 'Maksymalna ilość miejsc',fc.[ActivePlace] as 'Dostępne miejsca',fc.[IdEmployee] as 'ID pracownika',fc.[LevelOdAdvancement] as 'Poziom trudności'FROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\nINNER JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() > fc.[EndDate];";
                 SqlDataAdapter adapter = new SqlDataAdapter(queryAfterTime, con);
                 DataSet ds = new DataSet();
 
@@ -124,21 +146,20 @@ namespace Gym_Management_System
         {
             if (ViewFitnessClasss.SelectedRows.Count > 0)
             {
-                int selectedIndex = ViewFitnessClasss.SelectedRows[0].Index;
-                int fitnessClassId = Convert.ToInt32(ViewFitnessClasss.Rows[selectedIndex].Cells["Identyfikator typu zajęć"].Value);
+  
+                int fitnessClassId = Convert.ToInt32(ViewFitnessClasss.SelectedRows[0].Cells["ID zajęć"].Value);
 
-                DialogResult result = MessageBox.Show("Czy na pewno chcesz usunąć to zajęcie fitness?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Czy na pewno chcesz usunąć te zajęcia?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    
                     if (CheckReservationsExist(fitnessClassId))
                     {
-                        MessageBox.Show("Nie można usunąć tego zajęcia fitness, ponieważ istnieją dla niego rezerwacje.");
+                        MessageBox.Show("Nie można usunąć tych zajęć, ponieważ istnieją dla niego rezerwacje.");
                         return;
                     }
 
-                    
                     DeleteFitnessClassFromDatabase(fitnessClassId);
+                    RefreshData();  
                 }
             }
             else
@@ -190,14 +211,14 @@ namespace Gym_Management_System
                 cmd.Parameters.AddWithValue("@FitnessClassId", fitnessClassId);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Zajęcie fitness zostało pomyślnie usunięte.");
+                MessageBox.Show("Zajęcia zostały pomyślnie usunięte.");
 
-                
+
                 ShowFitnessClass();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił błąd podczas usuwania zajęcia fitness: " + ex.Message);
+                MessageBox.Show("Wystąpił błąd podczas usuwania zajęć: " + ex.Message);
             }
             finally
             {
@@ -207,7 +228,9 @@ namespace Gym_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Fitness_Class.UpdateFitnessClasses updateFitnessClasses = new Fitness_Class.UpdateFitnessClasses();
+            updateFitnessClasses.Show();
+            this.Close();
         }
     }
 }

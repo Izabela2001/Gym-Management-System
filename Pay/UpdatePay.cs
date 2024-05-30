@@ -93,7 +93,7 @@ namespace Gym_Management_System.Pay
             }
             else
             {
-                Answer.Text = "Prodzę wybrać płatność do aktualizacji";
+                Answer.Text = "Proszę wybrać płatność do aktualizacji";
 
             }
 
