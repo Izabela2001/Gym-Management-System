@@ -34,7 +34,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser as 'Identyfikator użytkownika'" +
                     ", R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\n" +
@@ -74,7 +74,7 @@ namespace Gym_Management_System
                 int selectedReservationId = Convert.ToInt32(Reservation_NoApproved.SelectedRows[0].Cells["IdReservation"].Value);
 
                 
-                using (SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;"))
+                using (SqlConnection con = new SqlConnection("Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;"))
                 {
                     try
                     {
@@ -152,7 +152,7 @@ namespace Gym_Management_System
                 int reservationId = Convert.ToInt32(Reservation_NoApproved.SelectedRows[0].Cells["IdReservation"].Value);
                 try
                 {
-                    con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                    con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                     con.Open();
 
                     string updateReservation = "UPDATE RESERVATION SET IsAccepted = 1 WHERE IdReservation = @ReservationId";

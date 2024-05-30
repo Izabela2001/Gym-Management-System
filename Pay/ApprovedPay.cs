@@ -29,7 +29,7 @@ namespace Gym_Management_System.Pay
                 SqlConnection con = new SqlConnection();
                 try
                 {
-                    con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                    con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                     con.Open();
 
      
@@ -63,7 +63,7 @@ namespace Gym_Management_System.Pay
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment " +
                     "AS 'Identyfikator płatności', " +

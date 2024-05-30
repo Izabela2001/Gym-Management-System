@@ -23,7 +23,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser as 'Identyfikator użytkownika', R.DateReservation as 'Data rezerwacji'," +
                     " R.IdFitnessClass as 'Identyfikator zajęć'\r\nFROM RESERVATION AS R\r\n", con);
@@ -82,7 +82,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("  SELECT R.IdReservation as 'Identyfikator rezerwacji', R.IdUser as 'Identyfikator użytkownika'," +
                     " R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\nFROM RESERVATION AS R\r\n" +
@@ -109,7 +109,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser as 'Identyfikator użytkownika', " +
                     "R.DateReservation as 'Data rezerwacji', R.IdFitnessClass as 'Identyfikator zajęć'\r\n" +
@@ -154,7 +154,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
 
                 
@@ -216,6 +216,11 @@ namespace Gym_Management_System
 
         private void Return_Reservation_Click(object sender, EventArgs e)
         {
+        }
+
+        private void ReservationShow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

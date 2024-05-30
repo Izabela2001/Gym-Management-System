@@ -32,7 +32,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT NAME FROM TYPE_FITNESS_CLASS;", con);
                 DataSet ds = new DataSet();
@@ -61,7 +61,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT NAME FROM TYPE_PAYMENT;", con);
                 DataSet ds = new DataSet();
@@ -95,7 +95,7 @@ namespace Gym_Management_System
             }
 
             // Utwórz połączenie do bazy danych
-            SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;");
+            SqlConnection con = new SqlConnection("Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;");
             try
             {
                 con.Open();
@@ -152,7 +152,7 @@ namespace Gym_Management_System
             }
 
             string selectedTypePaymentName = List_TypePayment.SelectedItem.ToString();
-            using (SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;"))
+            using (SqlConnection con = new SqlConnection("Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;"))
             {
                 try
                 {
@@ -216,7 +216,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
 
                 SqlCommand getLastIdCmd = new SqlCommand("SELECT MAX(IdReservation) FROM RESERVATION", con);

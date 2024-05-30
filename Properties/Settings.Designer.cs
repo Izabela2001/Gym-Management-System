@@ -26,7 +26,7 @@ namespace Gym_Management_System.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=IZABELA\\SQLEXPRESS;Initial Catalog=Fitnesso;Integrated Security=True;" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DDK5DON;Initial Catalog=Fitnesso;Integrated Security=True;" +
             "Encrypt=False")]
         public string FitnessoConnectionString {
             get {

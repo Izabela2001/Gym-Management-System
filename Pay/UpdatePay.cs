@@ -30,7 +30,7 @@ namespace Gym_Management_System.Pay
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT P.IdPayment as 'Identyfikator płatności'" +
                     ", P.IdReservation as 'Identyfikator rezerwacji'" +
@@ -58,7 +58,7 @@ namespace Gym_Management_System.Pay
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT IdTypePayment, Name FROM TYPE_PAYMENT", con);
                 DataTable dt = new DataTable();
@@ -105,7 +105,7 @@ namespace Gym_Management_System.Pay
             DateTime newDateOfPayment = Convert.ToDateTime(DataPay.Text);
             int newTypePaymentId = Convert.ToInt32(TypePayment.SelectedValue);
             int newReservationId  = Convert.ToInt32(IdReservation.Text);
-            SqlConnection con = new SqlConnection("Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;");
+            SqlConnection con = new SqlConnection("Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;");
             SqlCommand cmd = new SqlCommand("UPDATE PAYMENT SET IdReservation = @IdReservation ,IdUser = @UserId, DateOfPayment = @DateOfPayment, IdTypePayment = @TypePaymentId WHERE IdPayment = @PaymentId", con);
             cmd.Parameters.AddWithValue("@IdReservation", newReservationId);
             cmd.Parameters.AddWithValue("@UserId", newUserId);
@@ -149,6 +149,11 @@ namespace Gym_Management_System.Pay
             App app = new App();
             app.Show();
             this.Close();
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -29,7 +29,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 string queryFitnessClass = " SELECT FC.IdFitnessClass AS 'Identyfikator typu zajęć'," +
                     " TFC.Name AS 'Rodzaj zajęć',\r\n  FC.StartDate AS 'Data rozpoczęcia', " +
@@ -60,7 +60,7 @@ namespace Gym_Management_System
             try
             {
 
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 string queryActiveFitnessClass = " SELECT \r\n    fc.[IdFitnessClass],\r\n    fc.[IdTypeFitness],\r\n    tf.[Name],\r\n    fc.[StartDate],\r\n    fc.[EndDate],\r\n    fc.[MaxPlace],\r\n    fc.[ActivePlace],\r\n    fc.[IdEmployee],\r\n    fc.[LevelOdAdvancement]\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\ninner JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() <fc.[EndDate] ;";
                 SqlDataAdapter adapter = new SqlDataAdapter(queryActiveFitnessClass, con);
@@ -85,7 +85,7 @@ namespace Gym_Management_System
             try
             {
 
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 string queryAfterTime = " SELECT \r\n    fc.[IdFitnessClass],\r\n    fc.[IdTypeFitness],\r\n    tf.[Name],\r\n    fc.[StartDate],\r\n    fc.[EndDate],\r\n    fc.[MaxPlace],\r\n    fc.[ActivePlace],\r\n    fc.[IdEmployee],\r\n    fc.[LevelOdAdvancement]\r\nFROM [Fitnesso].[dbo].[FITNESS_CLASS] fc\r\ninner JOIN [Fitnesso].[dbo].[TYPE_FITNESS_CLASS] tf ON fc.[IdTypeFitness] = tf.[IdTypeFitness]\r\nWHERE GETDATE() >fc.[EndDate] ;";
                 SqlDataAdapter adapter = new SqlDataAdapter(queryAfterTime, con);
@@ -153,7 +153,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
 
                 
@@ -181,7 +181,7 @@ namespace Gym_Management_System
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
 
                 

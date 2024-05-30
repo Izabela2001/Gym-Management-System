@@ -29,7 +29,7 @@ namespace Gym_Management_System.Reservations
             SqlConnection con = new SqlConnection();
             try
             {
-                con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT R.IdReservation, R.IdUser, R.DateReservation, R.IdFitnessClass\r\nFROM RESERVATION AS R\r\n", con);
                 DataSet ds = new DataSet();
@@ -98,7 +98,7 @@ namespace Gym_Management_System.Reservations
                 SqlConnection con = new SqlConnection();
                 try
                 {
-                    con.ConnectionString = "Server=IZABELA\\SQLEXPRESS;Database=Fitnesso;Integrated Security=True;";
+                    con.ConnectionString = "Server=DESKTOP-DDK5DON;Database=Fitnesso;Integrated Security=True;";
                     con.Open();
                     string query = "UPDATE RESERVATION SET DateReservation = @DateReservation, IdUser = @IdUser, IdFitnessClass = @IdFitnessClass WHERE IdReservation = @IdReservation";
 
