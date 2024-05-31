@@ -1,4 +1,4 @@
-#Gym Management System#
+  Gym Management System
 #Opis#
 Gym Management System to aplikacja umożliwiająca zarządzanie rezerwacjami zajęć fitness w siłowni. Użytkownicy mogą dodawać rezerwacje, a także zarządzać płatnościami za zajęcia. Aplikacja łączy się z bazą danych SQL Server.
 
